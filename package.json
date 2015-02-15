@@ -23,6 +23,7 @@
     "gulp-run-sequence": "^0.3.2",
     "gulp-swig": "^0.7.2",
     "gulp-uglify": "^0.3.1",
+    "gulp-uncss": "^1.0.0",
     "gulp-util": "^3.0.1",
     "gulp-wp-rev": "0.0.1",
     "gulp-zip": "^2.0.2",

@@ -30,7 +30,7 @@ html {
   -ms-text-size-adjust: 100%;
 }
 
-body {
+body, .main-navigation ul ul, button i {
   margin: 0;
 }
 
@@ -246,7 +246,7 @@ th {
 /*--------------------------------------------------------------
 2.0 Typography
 --------------------------------------------------------------*/
-body,
+body, .main-navigation ul ul, button i,
 button,
 input,
 select,
@@ -338,7 +338,7 @@ html {
           box-sizing: inherit;
 }
 
-body {
+body, .main-navigation ul ul, button i {
   background: #fff;
   /* Fallback for when there is no custom background color defined. */
 }
@@ -549,6 +549,7 @@ a:active {
 
 .main-navigation ul ul a {
   width: 200px;
+  margin-top: 1.4em;
 }
 
 .main-navigation ul li:hover > ul {
@@ -3037,7 +3038,7 @@ html {
 /**
  * Remove default margin.
  */
-body {
+body, .main-navigation ul ul, button i {
   margin: 0;
 }
 
@@ -10695,7 +10696,7 @@ ul.side-nav.fixed .collapsible-body li.active a {
     margin-bottom: 5em;
   }
 }
-body {
+body, .main-navigation ul ul, button i {
   background-color: #fafafa;
   color: #d4d4d4;
 }
@@ -10723,13 +10724,23 @@ div.site-branding {
   color: #fafafa;
   float: left;
   margin-left: 1.0em;
-  width: 50%;
+  width: 60%;
 }
 div.site-branding h1.site-title {
-  font-size: 2.0rem;
-  margin: 10px;
+  font-size: 130%;
+  margin: 1em 0;
   line-height: 150%;
   float: left;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  div.site-branding h1.site-title {
+    margin-top: 1.4rem;
+  }
+}
+@media only screen and (min-width: 30em) {
+  div.site-branding h1.site-title {
+    margin-top: 1.2rem;
+  }
 }
 div.site-branding h1.site-title a {
   color: #d81b60;
@@ -10741,11 +10752,26 @@ div.site-branding h1.site-title a:visited {
 nav.main-navigation {
   position: absolute;
   top: 0;
-  right: 0;
-  width: 30%;
+  right: 20px;
+  width: 40%;
   height: 60px;
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+@media only screen and (min-width: 48em) {
+  nav.main-navigation {
+    width: 60%;
+  }
+}
+@media only screen and (min-width: 62em) {
+  nav.main-navigation {
+    width: 40%;
+  }
+}
+@media only screen and (min-width: 75em) {
+  nav.main-navigation {
+    width: 30%;
+  }
 }
 nav.main-navigation li {
   height: 60px;
@@ -10841,13 +10867,11 @@ ul li a {
 }
 
 button.menu-toggle {
-  height: 60px;
   border: 0;
   background-color: transparent;
   -webkit-box-shadow: none;
           box-shadow: none;
   float: right;
-  font-size: 2rem;
   line-height: 2.1rem;
   vertical-align: middle;
 }
@@ -10863,4 +10887,34 @@ button.menu-toggle {
 }
 #s:-ms-input-placeholder {
   color: rgba(51, 51, 51, 0.1);
+}
+
+button i {
+  font-size: 2.0rem;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  .menu-primarynav-container {
+    overflow: hidden;
+    background-color: #fafafa;
+    border: #d4d4d4;
+    margin-top: 4.2em;
+    margin-left: -193px;
+  }
+  .menu-primarynav-container #menu-primarynav {
+    border: 1px solid #adadad;
+  }
+  .menu-primarynav-container #menu-primarynav li {
+    width: 320px;
+    background-color: #fafafa;
+    border-bottom: 1px solid #adadad;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+  .menu-primarynav-container {
+    margin-left: -343px;
+  }
+  .menu-primarynav-container #menu-primarynav li {
+    width: 568px;
+  }
 }

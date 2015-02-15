@@ -15,6 +15,7 @@ var gulp 	= require('gulp'),
 	browserSync	= require('browser-sync'), // Asynchronous browser loading on .scss file changes
 	reload				= browserSync.reload,
 	autoprefixer 	= require('gulp-autoprefixer'), // Autoprefixing magic
+    uncss = require('gulp-uncss'),
 	minifycss 		= require('gulp-minify-css'),
 	jshint 				= require('gulp-jshint'),
 	uglify 				= require('gulp-uglify'),
