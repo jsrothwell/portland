@@ -10839,3 +10839,28 @@ span.edit-link {
 ul li a {
   color: #d81b60;
 }
+
+button.menu-toggle {
+  height: 60px;
+  border: 0;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  float: right;
+  font-size: 2rem;
+  line-height: 2.1rem;
+  vertical-align: middle;
+}
+
+#s::-webkit-input-placeholder {
+  color: rgba(51, 51, 51, 0.1);
+}
+#s::-moz-placeholder {
+  color: rgba(51, 51, 51, 0.1);
+}
+#s:-moz-placeholder {
+  color: rgba(51, 51, 51, 0.1);
+}
+#s:-ms-input-placeholder {
+  color: rgba(51, 51, 51, 0.1);
+}
