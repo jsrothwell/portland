@@ -13,6 +13,21 @@
     "tests"
   ],
   "dependencies": {
-    "materialize": "~0.95.2"
+    "materialize": "~0.95.2",
+    "jquery": "~2.1.3"
+  },
+  "preen": {
+    "materialize": [
+      "sass/*",
+      "bin/*",
+      "font/*",
+      "js/*",
+      "sass/*",
+      "templates/*",
+      "LICENSE"
+    ],
+      "jquery": [
+      "dist/*.js"
+    ]
   }
 }
