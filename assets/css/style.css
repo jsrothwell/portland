@@ -10922,3 +10922,7 @@ button i {
 div.pp_pic_holder {
   z-index: 120000 !important;
 }
+
+div.pp_overlay {
+  z-index: 110000 !important;
+}
