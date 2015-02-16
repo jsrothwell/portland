@@ -537,6 +537,7 @@ a:active {
 
 .main-navigation ul ul a {
 	width: 200px;
+    margin-top: 1.4em;
 }
 
 .main-navigation ul ul li {
@@ -864,6 +865,43 @@ object {
 
 @import '../bower_components/materialize/sass/materialize.scss';
 
+$retina-phone:   "only screen and (min-device-width : 320px) and (max-device-width : 568px)";
+$retina-phone-landscape: "only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : landscape)";
+$phones: "only screen and (min-width : 30em)";
+$tablets:    "only screen and (min-width : 48em)";
+$desktop-and-tablet:    "only screen and (min-width : 62em)";
+$wide-screens:    "only screen and (min-width : 75em)";
+$IE: "screen and (-ms-high-contrast: active),(-ms-high-contrast: none)";
+$IE-phone:   "screen and (-ms-high-contrast: active),(-ms-high-contrast: none) and (min-width : 20em)";
+$IE-retina-phone:    "screen and (-ms-high-contrast: active),(-ms-high-contrast: none) and (min-width : 20em)";
+$IE-phones:    "screen and (-ms-high-contrast: active),(-ms-high-contrast: none) and (min-width : 30em)";
+$IE-tablets:    "screen and (-ms-high-contrast: active),(-ms-high-contrast: none) and (min-width : 48em)";
+$IE-desktop-and-tablet:    "screen and (-ms-high-contrast: active),(-ms-high-contrast: none) and (min-width : 62em)";
+$mozilla-windows:   "not all and (-moz-windows-compositor)";
+$mozilla: "$media not all and (-moz-device-pixel-ratio)";
+$opera: "not screen and (1)";
+$ff-1: "all and (min--moz-device-pixel-ratio:0)";
+$ff-2: "all and (-moz-images-in-menus:0)";
+$ff-29: "all and (min--moz-device-pixel-ratio:0) and (min-resolution: 3e1dpcm)";
+
+//Measurement Variables
+
+$t-2px: 0.125em;
+$t-5px: 0.3125em;
+$t-10px: 0.625em;
+$t-15px: 0.9375em;
+$t-20px: 1.25em;
+$t-30px: 1.875em;
+$t-40px: 2.62em;
+$t-50px: 3.125em;
+$t-60px: $t-30px * 2;
+$t-70px: $t-30px + $t-40px;
+$t-64px: 4em;
+$t-78px: 4.8em;
+$t-80px: 5em;
+$t-90px: $t-40px + $t-50px;
+
+
 @mixin placeholder {
   $placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
   @each $placeholder in $placeholders {
@@ -890,28 +928,47 @@ object {
   $link-color: color("pink", "darken-1");
   $button-color: $link-color;
 
-body{   background-color:$primary-color;color:$primary-color-dark;    }
+body{   background-color:$primary-color;color:$primary-color-dark;
+}
 header#masthead, nav {   background-color:$primary-color;color:$primary-color;border-bottom:1px solid $primary-color-dark;    }
 a   {   color:$link-color;  }
 
 header#masthead {   position:fixed; top:0; margin:auto; z-index:100000; width:100%;height:60px;
 
 }
-div.site-branding   {   color:$primary-color;float:left;margin-left:1.0em;width:50%;
-    h1.site-title   {   font-size:2.0rem;margin:10px;line-height:150%;float:left;
+div.site-branding   {   color:$primary-color;float:left;margin-left:1.0em;width:60%;
+    h1.site-title   {
+        font-size:130%;margin:1em 0;line-height:150%;float:left;
+        @media #{$retina-phone}  {
+            margin-top:1.4rem;
+        }
+    @media #{$phones} {
+            margin-top:1.2rem;
+        }
         a   {   color:$link-color; }
         a:visited   {   color:$link-color; }
     }
 }
-nav.main-navigation {   position: absolute;
-top: 0;
-right: 0;
-width: 30%;
-height: 60px;
-box-shadow: none;
+nav.main-navigation {   
+    @media #{$tablets}  {
+     width:60%;   
+    }
+@media #{$desktop-and-tablet}   {
+ width:40%;   
+}
+@media #{$wide-screens} {
+    width:30%
+        
+}
 li  {   
     height:60px;
 }
+position: absolute;
+top: 0;
+right: 20px;
+width: 40%;
+height: 60px;
+box-shadow: none;
 }
 .main-navigation ul li:hover > ul {
   margin-top: 37px;
@@ -919,6 +976,7 @@ li  {
 .main-navigation ul ul  {
  box-shadow:none;
     border:1px solid $primary-color-dark;
+    @extend body;
 }
 
 div.container   {   margin-top:2.6em;    }
@@ -983,12 +1041,10 @@ span.edit-link  {   float:right;
 ul li a    {    color:$link-color;   }
 
 button.menu-toggle {
-height: 60px;
 border: 0;
 background-color: transparent;
 box-shadow: none;
     float: right;
-font-size: 2rem;
 line-height: 2.1rem;
 vertical-align: middle;
 }
@@ -997,4 +1053,33 @@ vertical-align: middle;
     @include placeholder    {
         color:rgba(51, 51, 51, 0.1);
     }
+}
+
+button i    {   @extend body;font-size:2.0rem;   }
+
+.menu-primarynav-container   {
+ @media #{$retina-phone}    {
+  overflow:hidden;
+     background-color:$primary-color;
+     border: $primary-color-dark;
+     margin-top:4.2em;
+     margin-left:-193px;
+     #menu-primarynav   {
+         border:1px solid darken( $primary-color-dark, 15% );
+      li    {
+          width:320px;
+          background-color: $primary-color;
+          border-bottom: 1px solid darken( $primary-color-dark, 15%);
+      }
+     }
+ }
+@media #{$retina-phone-landscape}   {
+    margin-left:-343px;
+ #menu-primarynav   {
+     
+     li {  
+         width:568px;
+     }
+}
+}
 }
