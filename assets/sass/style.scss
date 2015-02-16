@@ -1083,3 +1083,7 @@ button i    {   @extend body;font-size:2.0rem;   }
 }
 }
 }
+
+div.pp_pic_holder {
+z-index: 120000 !important;
+}
