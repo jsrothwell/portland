@@ -941,6 +941,7 @@ div.site-branding   {   color:$primary-color;float:left;margin-left:1.0em;width:
         font-size:130%;margin:1em 0;line-height:150%;float:left;
         @media #{$retina-phone}  {
             margin-top:1.4rem;
+            font-size:110%;
         }
     @media #{$phones} {
             margin-top:1.2rem;
@@ -1063,7 +1064,8 @@ button i    {   @extend body;font-size:2.0rem;   }
      background-color:$primary-color;
      border: $primary-color-dark;
      margin-top:4.2em;
-     margin-left:-193px;
+     margin-left:-175px;
+     width:320px;
      .header-menu-dropdown   {
          border:1px solid darken( $primary-color-dark, 15% );
       li    {
@@ -1074,7 +1076,8 @@ button i    {   @extend body;font-size:2.0rem;   }
      }
  }
 @media #{$retina-phone-landscape}   {
-    margin-left:-343px;
+    margin-left:-321px;
+    width:568px;
  .header-menu-dropdown   {
      
      li {  

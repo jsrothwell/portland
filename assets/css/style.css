@@ -10735,6 +10735,7 @@ div.site-branding h1.site-title {
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   div.site-branding h1.site-title {
     margin-top: 1.4rem;
+    font-size: 110%;
   }
 }
 @media only screen and (min-width: 30em) {
@@ -10894,27 +10895,29 @@ button i {
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-  .potsie {
+  .header-menu-container {
     overflow: hidden;
     background-color: #fafafa;
     border: #d4d4d4;
     margin-top: 4.2em;
-    margin-left: -193px;
+    margin-left: -175px;
+    width: 320px;
   }
-  .potsie .header-menu-dropdown {
+  .header-menu-container .header-menu-dropdown {
     border: 1px solid #adadad;
   }
-  .potsie .header-menu-dropdown li {
+  .header-menu-container .header-menu-dropdown li {
     width: 320px;
     background-color: #fafafa;
     border-bottom: 1px solid #adadad;
   }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
-  .potsie {
-    margin-left: -343px;
+  .header-menu-container {
+    margin-left: -321px;
+    width: 568px;
   }
-  .potsie .header-menu-dropdown li {
+  .header-menu-container .header-menu-dropdown li {
     width: 568px;
   }
 }
