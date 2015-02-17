@@ -10894,27 +10894,27 @@ button i {
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-  .menu-primarynav-container {
+  .potsie {
     overflow: hidden;
     background-color: #fafafa;
     border: #d4d4d4;
     margin-top: 4.2em;
     margin-left: -193px;
   }
-  .menu-primarynav-container #menu-primarynav {
+  .potsie .header-menu-dropdown {
     border: 1px solid #adadad;
   }
-  .menu-primarynav-container #menu-primarynav li {
+  .potsie .header-menu-dropdown li {
     width: 320px;
     background-color: #fafafa;
     border-bottom: 1px solid #adadad;
   }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
-  .menu-primarynav-container {
+  .potsie {
     margin-left: -343px;
   }
-  .menu-primarynav-container #menu-primarynav li {
+  .potsie .header-menu-dropdown li {
     width: 568px;
   }
 }

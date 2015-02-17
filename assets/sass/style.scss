@@ -1057,14 +1057,14 @@ vertical-align: middle;
 
 button i    {   @extend body;font-size:2.0rem;   }
 
-.menu-primarynav-container   {
+.header-menu-container   {
  @media #{$retina-phone}    {
   overflow:hidden;
      background-color:$primary-color;
      border: $primary-color-dark;
      margin-top:4.2em;
      margin-left:-193px;
-     #menu-primarynav   {
+     .header-menu-dropdown   {
          border:1px solid darken( $primary-color-dark, 15% );
       li    {
           width:320px;
@@ -1075,7 +1075,7 @@ button i    {   @extend body;font-size:2.0rem;   }
  }
 @media #{$retina-phone-landscape}   {
     margin-left:-343px;
- #menu-primarynav   {
+ .header-menu-dropdown   {
      
      li {  
          width:568px;

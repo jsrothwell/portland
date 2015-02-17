@@ -148,7 +148,7 @@ add_action( 'comment_form', 'so_comment_button' );
 
 //Remove "Protected:" from password protected posts and pages
 function the_title_trim($title) {
-	$title = attribute_escape($title);
+	$title = esc_attr($title);
 	$findthese = array(
 		'#Protected:#',
 		'#Private:#'
