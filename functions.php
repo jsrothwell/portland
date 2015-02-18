@@ -74,6 +74,16 @@ function portland_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+    
+    /**
+	 * WP Customizer
+	 */
+	require get_template_directory() . '/library/vendor/github-updater/github-updater.php';
+
+	/**
+	 * Including TGM Plugin Activation
+	 */
+	require_once( get_template_directory() . '/library/vendor/tgm-plugin-activation/required-plugins.php' );
 }
 endif; // portland_setup
 add_action( 'after_setup_theme', 'portland_setup' );
