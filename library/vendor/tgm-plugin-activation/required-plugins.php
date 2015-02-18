@@ -82,11 +82,9 @@ function portland_register_required_plugins() {
         array(
             'name'      =>  'Github Updater',
             'slug'      =>  'github-updater',
-            'source'    =>  'https://github.com/afragen/github-updater',
+            'source'    => get_stylesheet_directory() . '/lib/plugins/github-updater.zip', // The plugin source.
             'required'  =>  false,
-            'external_url'    =>  'https://github.com/afragen/github-updater',
-            
-        )
+            )
 
     );
 
