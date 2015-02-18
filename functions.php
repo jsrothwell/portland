@@ -139,6 +139,12 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+
+/**
+ * Including TGM Plugin Activation
+ */
+require_once( get_template_directory() . '/library/vendors/tgm-plugin-activation/required-plugins.php' );
+
 function so_comment_button() {
      
     echo '<button name="submit" class="waves-effect waves-light btn" type="submit" value="' . __( 'Post Comment', 'textdomain' ) . '" >Submit</button>';
