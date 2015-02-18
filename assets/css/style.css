@@ -10896,3 +10896,7 @@ div.pp_overlay {
 .entry-content.inline-comments.side-comments-open {
   margin-left: 220px;
 }
+
+h1.entry-title {
+  margin-top: 60px;
+}
