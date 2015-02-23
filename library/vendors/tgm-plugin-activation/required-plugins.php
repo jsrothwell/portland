@@ -74,13 +74,7 @@ function my_theme_register_required_plugins() {
             'slug'      => 'contact-form-7',
             'required'  => false,
         ),
-        /* array(
-            'name'      => 'Github Updater',
-            'slug'      => 'github-updater',
-            'source'    =>  'https://github.com/afragen/github-updater',
-            'required'  => false,
-            'external_url'  =>  'https://github.com/afragen/github-updater',
-        ), */
+
 
     );
 
