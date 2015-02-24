@@ -10696,9 +10696,104 @@ ul.side-nav.fixed .collapsible-body li.active a {
     margin-bottom: 5em;
   }
 }
+.ig-walden {
+  -webkit-filter: sepia(0.35) contrast(0.9) brightness(1.1) hue-rotate(-10deg) saturate(1.5);
+  filter: sepia(0.35) contrast(0.9) brightness(1.1) hue-rotate(-10deg) saturate(1.5);
+}
+
+.ig-rise {
+  -webkit-filter: saturate(1.4) sepia(0.25) hue-rotate(-15deg) contrast(0.8) brightness(1.1);
+  filter: saturate(1.4) sepia(0.25) hue-rotate(-15deg) contrast(0.8) brightness(1.1);
+}
+
+.ig-1977 {
+  -webkit-filter: sepia(0.5) hue-rotate(-30deg) saturate(1.2) contrast(0.8);
+  filter: sepia(0.5) hue-rotate(-30deg) saturate(1.2) contrast(0.8);
+}
+
+.ig-amaro {
+  -webkit-filter: hue-rotate(-10deg) contrast(0.9) brightness(1.1) saturate(1.5);
+  filter: hue-rotate(-10deg) contrast(0.9) brightness(1.1) saturate(1.5);
+}
+
+.ig-brannan {
+  -webkit-filter: sepia(0.5) contrast(1.4);
+  filter: sepia(0.5) contrast(1.4);
+}
+
+.ig-earlybird {
+  -webkit-filter: sepia(0.4) saturate(1.6) contrast(1.1) brightness(0.9) hue-rotate(-10deg);
+  filter: sepia(0.4) saturate(1.6) contrast(1.1) brightness(0.9) hue-rotate(-10deg);
+}
+
+.hefe {
+  -webkit-filter: contrast(1.3) sepia(0.3) saturate(1.3) hue-rotate(-10deg) brightness(0.95);
+  filter: contrast(1.3) sepia(0.3) saturate(1.3) hue-rotate(-10deg) brightness(0.95);
+}
+
+.ig-hudson {
+  -webkit-filter: contrast(1.2) brightness(0.9) hue-rotate(-10deg);
+  filter: contrast(1.2) brightness(0.9) hue-rotate(-10deg);
+}
+
+.ig-inkwell {
+  -webkit-filter: grayscale(1) brightness(1.2) contrast(1.05);
+  filter: grayscale(1) brightness(1.2) contrast(1.05);
+}
+
+.ig-kelvin {
+  filter: sepia(0.4) saturate(2.4) brightness(1.3) contrast(1);
+  -webkit-filter: sepia(0.4) saturate(2.4) brightness(1.3) contrast(1);
+}
+
+.ig-lofi {
+  filter: contrast(1.4) brightness(0.9) sepia(0.05);
+  -webkit-filter: contrast(1.4) brightness(0.9) sepia(0.05);
+}
+
+.ig-mayfair {
+  -webkit-filter: saturate(1.4) contrast(1.1);
+  filter: saturate(1.4) contrast(1.1);
+}
+
+.ig-nashville {
+  -webkit-filter: sepia(0.4) saturate(1.5) contrast(0.9) brightness(1.1) hue-rotate(-15deg);
+  filter: sepia(0.4) saturate(1.5) contrast(0.9) brightness(1.1) hue-rotate(-15deg);
+}
+
+.ig-sierra {
+  -webkit-filter: contrast(0.8) saturate(1.2) sepia(0.15);
+  filter: contrast(0.8) saturate(1.2) sepia(0.15);
+}
+
+.ig-sutro {
+  -webkit-filter: brightness(0.75) contrast(1.3) sepia(0.5) hue-rotate(-25deg);
+  filter: brightness(0.75) contrast(1.3) sepia(0.5) hue-rotate(-25deg);
+}
+
+.ig-toaster {
+  -webkit-filter: sepia(0.4) saturate(2.5) hue-rotate(-30deg) contrast(0.67);
+  -filter: sepia(0.4) saturate(2.5) hue-rotate(-30deg) contrast(0.67);
+}
+
+.ig-xpro2 {
+  -webkit-filter: contrast(1.3) brightness(0.8) sepia(0.3) saturate(1.5) hue-rotate(-20deg);
+  filter: contrast(1.3) brightness(0.8) sepia(0.3) saturate(1.5) hue-rotate(-20deg);
+}
+
+.ig-willow {
+  -webkit-filter: saturate(0.02) contrast(0.85) brightness(1.2) sepia(0.02);
+  filter: saturate(0.02) contrast(0.85) brightness(1.2) sepia(0.02);
+}
+
+.ig-valencia {
+  -webkit-filter: sepia(0.15) saturate(1.5) contrast(0.9);
+  filter: sepia(0.15) saturate(1.5) contrast(0.9);
+}
+
 body, .main-navigation ul ul, button i, .side-comment.has-comments.active .comments-wrapper {
   background-color: #fafafa;
-  color: #d4d4d4;
+  color: #adadad;
 }
 
 header#masthead, nav {
@@ -10708,7 +10803,7 @@ header#masthead, nav {
 }
 
 a {
-  color: #d81b60;
+  color: #fb8c00;
 }
 
 header#masthead {
@@ -10716,6 +10811,13 @@ header#masthead {
   top: 0;
   margin: auto;
   z-index: 100000;
+  width: 100%;
+  height: 60px;
+}
+
+body.single-post header#masthead, .main-navigation ul ul.single-post header#masthead, button i.single-post header#masthead, .side-comment.has-comments.active .single-post.comments-wrapper header#masthead {
+  position: inherit;
+  margin: auto;
   width: 100%;
   height: 60px;
 }
@@ -10744,10 +10846,10 @@ div.site-branding h1.site-title {
   }
 }
 div.site-branding h1.site-title a {
-  color: #d81b60;
+  color: #fb8c00;
 }
 div.site-branding h1.site-title a:visited {
-  color: #d81b60;
+  color: #fb8c00;
 }
 
 nav.main-navigation {
@@ -10790,6 +10892,10 @@ nav.main-navigation li {
 
 div.container {
   margin-top: 2.6em;
+}
+
+body.single div.container, .main-navigation ul ul.single div.container, button i.single div.container, .side-comment.has-comments.active .single.comments-wrapper div.container {
+  margin-top: 0;
 }
 
 hr.footer-divider-top {
@@ -10864,7 +10970,7 @@ span.edit-link {
 }
 
 ul li a {
-  color: #d81b60;
+  color: #fb8c00;
 }
 
 button.menu-toggle {
@@ -10952,6 +11058,117 @@ div.pp_overlay {
   margin-left: 220px;
 }
 
+body.single header, .main-navigation ul ul.single header, button i.single header, .side-comment.has-comments.active .single.comments-wrapper header {
+  position: relative;
+}
+
 h1.entry-title {
   margin-top: 60px;
+}
+
+body.single h1.entry-title, .main-navigation ul ul.single h1.entry-title, button i.single h1.entry-title, .side-comment.has-comments.active .single.comments-wrapper h1.entry-title {
+  margin-top: 0;
+  text-align: right;
+}
+
+.post-header:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  left: 0;
+  background: #fff;
+}
+
+.post-meta:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  left: 60%;
+  background-color: #5f6673;
+  text-align: left;
+}
+
+.hundred-percent {
+  width: 100%;
+}
+
+form#searchform {
+  margin-top: 3.0em;
+}
+
+div#content {
+  padding: 0;
+}
+
+body.single-post header.entry-header, .main-navigation ul ul.single-post header.entry-header, button i.single-post header.entry-header, .side-comment.has-comments.active .single-post.comments-wrapper header.entry-header {
+  text-align: center;
+  margin-top: -400px;
+  color: white;
+  padding-bottom: 100px;
+}
+body.single-post header.entry-header hr, .main-navigation ul ul.single-post header.entry-header hr, button i.single-post header.entry-header hr, .side-comment.has-comments.active .single-post.comments-wrapper header.entry-header hr {
+  border: 1px solid #d4d4d4;
+  background-color: white;
+}
+
+body.single .vcard a, .main-navigation ul ul.single .vcard a, button i.single .vcard a, .side-comment.has-comments.active .single.comments-wrapper .vcard a, body.single .posted-on a, .main-navigation ul ul.single .posted-on a, button i.single .posted-on a, .side-comment.has-comments.active .single.comments-wrapper .posted-on a {
+  color: #eceff1;
+}
+
+body.single .vcard a:visited, .main-navigation ul ul.single .vcard a:visited, button i.single .vcard a:visited, .side-comment.has-comments.active .single.comments-wrapper .vcard a:visited, body.single .posted-on a:visited, .main-navigation ul ul.single .posted-on a:visited, button i.single .posted-on a:visited, .side-comment.has-comments.active .single.comments-wrapper .posted-on a:visited {
+  color: #cfd8dc;
+}
+
+.single-featured-image {
+  position: relative;
+  width: 600px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.single-featured-image h2 {
+  background-color: Black;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  padding-left: 10px;
+  padding: 10px;
+  -moz-opacity: .80;
+  filter: alpha(opacity=20);
+  opacity: .80;
+  display: block;
+}
+
+.single-featured-image h2 a {
+  color: white;
+}
+
+.single-featured-image h2 a:visited {
+  color: white;
+}
+
+.single-featured-image h2 a:hover {
+  color: white;
+}
+
+.single-post-title {
+  padding: 20px;
+  height: 15em;
+}
+
+.single-post-title.right {
+  border-left: 5px solid rbga(white, 0.3);
+}
+
+.entry-meta {
+  text-align: left;
+  margin-top: 0.7em;
+  font-size: 1.4rem;
+  line-height: 150%;
 }
