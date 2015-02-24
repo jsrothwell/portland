@@ -5,7 +5,7 @@
 */
 
 // Project configuration
-var project     = 'portland', // Optional - Use your own project name here...
+var project     = 'oregon', // Optional - Use your own project name here...
 	build       = './build/', // Files that you want to package into a zip go here
 	source      = './assets/', 	// Your main project assets and naming 'source' instead of 'src' to avoid confusion with gulp.src
 	bower       = './bower_components/'; // Not truly using this yet, more or less playing right now. TO-DO Place in Dev branch
@@ -15,7 +15,6 @@ var gulp 	= require('gulp'),
 	browserSync	= require('browser-sync'), // Asynchronous browser loading on .scss file changes
 	reload				= browserSync.reload,
 	autoprefixer 	= require('gulp-autoprefixer'), // Autoprefixing magic
-    uncss = require('gulp-uncss'),
 	minifycss 		= require('gulp-minify-css'),
 	jshint 				= require('gulp-jshint'),
 	uglify 				= require('gulp-uglify'),
@@ -114,7 +113,7 @@ gulp.task('images', function() {
 // Move Fontawesome Icons to public/fonts
 gulp.task('icons', function() {
     return gulp.src(config.bowerDir + '/fontawesome/fonts/**.*')
-        .pipe(gulp.dest('assets/fonts'));
+        .pipe(gulp.dest('assets/font'));
 });
 
 

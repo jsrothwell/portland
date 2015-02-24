@@ -939,7 +939,7 @@ a   {   color:$link-color;  }
 header#masthead {   position:fixed; top:0; margin:auto; z-index:100000; width:100%;height:60px; }
 div.site-branding   {   color:$primary-color;float:left;margin-left:1.0em;width:60%;
     h1.site-title   {
-        font-size:130%;margin:1em 0;line-height:150%;float:left;
+        font-size:130%;margin:1em;line-height:150%;float:left;
         @media #{$retina-phone}  {
             margin-top:1.4rem;
             font-size:110%;
