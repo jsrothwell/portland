@@ -182,3 +182,52 @@ function cd_add_editor_styles() {
     add_editor_style( get_stylesheet_uri() );
 
 }
+
+/**
+* Featured Image function for posts and pages
+* 
+* @param  string $class The CSS class name to apply to the image default is .featured-img
+* @param  string $size  The image size to use. Default is full size
+* @return string        img -> width | height | src | class | alt
+* 
+*/
+function the_featured_image( $size = 'full', $class = 'featured-img' ) {
+ 
+    global $post;
+ 
+    if ( has_post_thumbnail( $post->ID ) ) {
+ 
+    /* get the title attribute of the post or page 
+     * and apply it to the alt tag of the image if the alt tag is empty
+     */
+    $attachment_id = get_post_thumbnail_id( $post->ID );
+ 
+    if ( get_post_meta($attachment_id, '_wp_attachment_image_alt', true) === '' ) {
+        // if no alt attribute is filled out then echo "Featured Image of article: Article Name"
+        $title = the_title_attribute( 
+            array( 
+                'before' => __( 'Featured image of article: ', 'YOUR-THEME-TEXTDOMAIN' ), 
+                'echo' => false
+            ) 
+        );
+    } else {
+        // the post thumbnail img alt tag
+        $title = trim( strip_tags( get_post_meta( $attachment_id, '_wp_attachment_image_alt', true ) ) );
+    }
+ 
+    $default_attr = array(
+        'class' => $class,
+        'alt' => $title,
+    );
+ 
+    // echo the featured image
+    the_post_thumbnail( $size, $default_attr );
+ 
+    } // end if has_post_thumbnail
+}
+add_filter( 'wpcf7_form_class_attr', 'your_custom_form_class_attr' );
+
+function your_custom_form_class_attr( $class ) {
+	$class .= ' col s12';
+	return $class;
+}

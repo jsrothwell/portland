@@ -7,14 +7,14 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area row">
+	<div id="primary" class="content-area">
         
-		<main id="main" class="site-main col s12" role="main">
+		<main id="main" class="site-main" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
-
+            <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 			<?php get_template_part( 'content', 'single' ); ?>
-
+            </article>
 			<?php the_post_navigation(); ?>
 
 			<?php
