@@ -104,7 +104,8 @@ function portland_scripts() {
 	wp_enqueue_style( 'portland-style', get_stylesheet_uri() );
 // Main Style
     wp_enqueue_style( 'northwest-style',  get_stylesheet_directory_uri() . '/assets/css/style-min.css' );
-// Main Scripts	
+// Main Scripts	    
+    wp_enqueue_script( 'portland-scripts' , get_template_directory_uri() . '/assets/js/production.min.js' );
     wp_enqueue_script( 'portland-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
     wp_enqueue_script( 'portland-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
     wp_enqueue_script(  'materialize-js', get_template_directory_uri() . '/assets/bower_components/materialize/dist/js/materialize.min.js', array(), 'v0.95.2', true );

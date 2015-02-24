@@ -74,6 +74,31 @@ function my_theme_register_required_plugins() {
             'slug'      => 'contact-form-7',
             'required'  => false,
         ),
+        array(
+            'name'      => 'Google No Captcha Recaptcha',
+            'slug'      => 'google-no-captcha-recaptcha',
+            'required'  => false,
+        ),
+         array(
+            'name'      => 'Master Slider',
+            'slug'      => 'master-slider',
+            'required'  => false,
+        ),
+        array(
+            'name'      => 'Use Google Libraries',
+            'slug'      => 'use-google-libraries',
+            'required'  => false,
+        ),
+        array(
+            'name'      => 'Wordpress SEO',
+            'slug'      => 'wordpress-seo',
+            'required'  => false,
+        ),
+        array(
+            'name'      => 'WP Typeahead',
+            'slug'      => 'wp-typeahead',
+            'required'  => false,
+        ),
 
 
     );
