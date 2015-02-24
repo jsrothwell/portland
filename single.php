@@ -15,7 +15,7 @@ get_header(); ?>
             <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 			<?php get_template_part( 'content', 'single' ); ?>
             </article>
-			<?php the_post_navigation(); ?>
+			
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template

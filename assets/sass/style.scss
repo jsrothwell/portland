@@ -938,7 +938,111 @@ body{   background-color:$primary-color;color:darken($primary-color-dark, 15%); 
 header#masthead, nav {   background-color:$primary-color;color:$primary-color;border-bottom:1px solid $primary-color-dark;
 }
 a   {   color:$link-color;  }
-header#masthead {   position:fixed; top:0; margin:auto; z-index:100000; width:100%;height:60px; }
+header#masthead {   position:fixed; top:0; margin:auto; z-index:100000; width:100%;height:60px;    }
+
+
+.fixedBar {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    z-index: 999;
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    -ms-transition: height 0.3s;
+    -o-transition: height 0.3s;
+    transition: height 0.3s;
+}
+.fixedBar h1#logo {
+    display: inline-block;
+    height: 150px;
+    line-height: 150px;
+    float: left;
+    font-family: "Oswald", sans-serif;
+    font-size: 60px;
+    color: white;
+    font-weight: 400;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.fixedBar nav {
+    display: inline-block;
+    float: right;
+}
+.fixedBar nav a {
+    line-height: 150px;
+    margin-left: 20px;
+    color: #9fdbfc;
+    font-weight: 700;
+    font-size: 18px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.fixedBar nav a:hover {
+    color: white;
+}
+.fixedBar.smaller {
+    height: 0;
+    transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+}
+.fixedBar.smaller h1#logo {
+    width: 150px;
+    height: 75px;
+    line-height: 75px;
+    font-size: 30px;
+}
+.fixedBar.smaller nav a {
+    line-height: 75px;
+}
+
+@media all and (max-width: 660px) {
+    .fixedBar h1#logo {
+        display: block;
+        float: none;
+        margin: 0 auto;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+    }
+    .fixedBar nav {
+        display: block;
+        float: none;
+        height: 50px;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .fixedBar nav a {
+        line-height: 50px;
+        margin: 0 10px;
+    }
+    .fixedBar.smaller {
+        height: 75px;
+    }
+    .fixedBar.smaller h1#logo {
+        height: 40px;
+        line-height: 40px;
+        font-size: 30px;
+    }
+    .fixedBar.smaller nav {
+        height: 35px;
+    }
+    .fixedBar.smaller nav a {
+        line-height: 35px;
+    }
+}
+
+nav a   {   color:$primary-color-dark;  }
+
 body.single-post header#masthead {   position:inherit; margin:auto; width:100%;height:60px; }
 div.site-branding   {   color:$primary-color;float:left;margin-left:1.0em;width:60%;
     h1.site-title   {
@@ -986,6 +1090,7 @@ li  {
 div.container   {   margin-top:2.6em;    }
 body.single div.container   {   margin-top:0;    }
 hr.footer-divider-top   {   background-color:$primary-color-dark;color:$primary-color-dark;height:1px;    }
+footer  {   background-color:$primary-color;    }
 footer.site-footer  {   min-height:100px;padding-top:20px;   }
 .form-submit {
     display: none;
@@ -1199,3 +1304,16 @@ body.single .vcard a:visited, body.single .posted-on a:visited  {   color:color(
 .entry-meta {   text-align:left;margin-top: 0.7em;
 font-size: 1.4rem;
 line-height: 150%;    }
+
+.col.s6.single-post-title.post-meta.right {
+border-left: 2px solid $primary-color;
+}
+
+.col.s6.single-post-title.post-header {
+border-right: 3px solid $primary-color-dark;
+}
+
+.wp-post-image  {   
+    border-top:5px solid $primary-color-dark;
+    border-bottom:5px solid $primary-color-dark; 
+}

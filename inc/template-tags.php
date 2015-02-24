@@ -70,10 +70,16 @@ if ( ! function_exists( 'portland_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function portland_posted_on() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	//$category = '<a href="' .esc_url(get_permalink()).'">%s</a>';
+	$categories = get_the_category();
+	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
 	}
+    //$category = sprintf($category, esc_attr(get_the_category()));
+	    $category_show = '<span class=""><a href=" ' .get_category_link($categories). ' ">' . $categories[0]->cat_name . '</a></span>';
+    	//$postheader .= '<h3 class="entry-title"><a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a></h3>';
+
 
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
@@ -83,16 +89,17 @@ function portland_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		_x( 'Posted on %s', 'post date', 'portland' ),
+		_x( 'Posted under '. $category_show. '<br />on %s', 'post date', 'stepup' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		_x( 'by %s', 'post author', 'portland' ),
+		_x( '<br />by %s', 'post author', 'stepup' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>';
+
 
 }
 endif;
