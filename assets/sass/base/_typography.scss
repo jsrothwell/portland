@@ -197,8 +197,8 @@ font-size: 0.8rem;
 button i    {   font-size:2.0rem;   }
 
 h1.entry-title  {
-    font-size: 270%;
-    line-height:280%;
+    font-size: $t-70px;
+    line-height:$t-15px;
     @media #{$retina-phone} {  font-size:120%;line-height:130%; }
     //@media #{$tablets} {  font-size:2.4rem; }
 }
@@ -210,6 +210,6 @@ h1.entry-title  {
 .entry-meta {   
     @media #{$retina-phone} {  font-size:100%;line-height:110%; }
     //@media #{$tablets} {  font-size:2.4rem; }*/
-    font-size: 145%;
-    line-height: 150%; 
+    font-size: $t-30px;
+    line-height:$t-20px;
 }

@@ -6200,7 +6200,7 @@ span.badge.new:after {
 .container {
   padding: 0 1.5rem;
   margin: 0 auto;
-  max-width: 1280px;
+  max-width: none !important;
   width: 90%;
 }
 
@@ -6511,7 +6511,6 @@ span.badge.new:after {
 nav {
   color: #fff;
   background-color: #ee6e73;
-  width: 100%;
   height: 56px;
   line-height: 56px;
 }
@@ -10271,8 +10270,8 @@ button i {
 }
 
 h1.entry-title {
-  font-size: 270%;
-  line-height: 280%;
+  font-size: 4.495em;
+  line-height: 0.9375em;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   h1.entry-title {
@@ -10286,8 +10285,8 @@ h1.entry-title {
 }
 
 .entry-meta {
-  font-size: 145%;
-  line-height: 150%;
+  font-size: 1.875em;
+  line-height: 1.25em;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .entry-meta {
@@ -10896,15 +10895,47 @@ header#masthead {
   top: 0;
   margin: auto;
   z-index: 100000;
-  width: 100%;
   height: 60px;
+}
+
+#masthead:after {
+  content: ".";
+  visibility: hidden;
+  height: 0;
+  clear: both;
+  display: block;
 }
 
 body.single-post header#masthead, .main-navigation ul ul.single-post header#masthead, button i.single-post header#masthead, .side-comment.has-comments.active .single-post.comments-wrapper header#masthead {
   position: inherit;
   margin: auto;
-  width: 100%;
   height: 60px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  .header-menu-container {
+    overflow: hidden;
+    border: #d4d4d4;
+    margin-top: 4.2em;
+    margin-left: -257px;
+    padding-right: 20px;
+  }
+  .header-menu-container .header-menu-dropdown {
+    border: 1px solid #adadad;
+  }
+  .header-menu-container .header-menu-dropdown li {
+    width: 320px;
+    border-bottom: 1px solid #adadad;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+  .header-menu-container {
+    margin-left: -321px;
+    width: 568px;
+  }
+  .header-menu-container .header-menu-dropdown li {
+    width: 568px;
+  }
 }
 
 div.site-branding {
@@ -10927,9 +10958,6 @@ div.site-branding h1.site-title {
 }
 
 nav.main-navigation {
-  position: absolute;
-  top: 0;
-  right: 20px;
   height: 60px;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -10987,32 +11015,6 @@ footer.site-footer {
 span.edit-link {
   float: right;
   padding: 20px;
-}
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-  .header-menu-container {
-    overflow: hidden;
-    border: #d4d4d4;
-    margin-top: 4.2em;
-    margin-left: -257px;
-    width: 320px;
-  }
-  .header-menu-container .header-menu-dropdown {
-    border: 1px solid #adadad;
-  }
-  .header-menu-container .header-menu-dropdown li {
-    width: 320px;
-    border-bottom: 1px solid #adadad;
-  }
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
-  .header-menu-container {
-    margin-left: -321px;
-    width: 568px;
-  }
-  .header-menu-container .header-menu-dropdown li {
-    width: 568px;
-  }
 }
 
 div.pp_pic_holder {
@@ -11123,7 +11125,6 @@ body.single-post header.entry-header, .main-navigation ul ul.single-post header.
 
 .entry-meta {
   text-align: left;
-  margin-top: 0.7em;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .entry-meta {
@@ -11170,6 +11171,18 @@ body.single-post article, .main-navigation ul ul.single-post article, button i.s
   .entry-content {
     margin-top: 25px;
   }
+}
+
+.site-main {
+  margin-top: 100px;
+}
+
+body.blog .site-main, .main-navigation ul ul.blog .site-main, button i.blog .site-main, .side-comment.has-comments.active .blog.comments-wrapper .site-main {
+  margin-top: 60px;
+}
+
+body.single-post .site-main, .main-navigation ul ul.single-post .site-main, button i.single-post .site-main, .side-comment.has-comments.active .single-post.comments-wrapper .site-main {
+  margin-top: auto;
 }
 
 /*--------------------------------------------------------------
