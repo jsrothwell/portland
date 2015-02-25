@@ -1,0 +1,61 @@
+body{   background-color:$primary-color;color:darken($primary-color-dark, 15%); }
+header#masthead, nav {   background-color:$primary-color;color:$primary-color;  }
+a   {   color:$link-color;  }
+nav a   {   color:$primary-color-dark;  }
+div.site-branding   {   color:$primary-color;
+        a   {   @extend a; }
+        a:visited   {   @extend a; }
+    }
+.main-navigation ul ul, button i  {   @extend body;   }
+
+hr.footer-divider-top   {   background-color:$primary-color-dark;color:$primary-color-dark;    }
+
+footer  {   background-color:$primary-color;    }
+.fixedBar {
+  background: $primary-color;
+  color: $primary-color-dark;
+}
+ul li a    {    @extend a;   }
+#s  {
+    @include placeholder    {
+        color:rgba(51, 51, 51, 0.1);
+    }
+}
+
+.header-menu-container   {
+ @media #{$retina-phone}    {
+     background-color:$primary-color;
+     .header-menu-dropdown   {
+      li    {
+          background-color: $primary-color;
+      }
+     }
+ }
+}
+.comments-wrapper {
+background: white;
+}
+.side-comment.has-comments.active   .comments-wrapper {
+    @extend body;
+}
+.post-header:before   {  
+    @extend .comments-wrapper;
+}
+.post-meta:before  {
+    background-color: #5f6673;
+}
+body.single-post header.entry-header {   color:$primary-color-light;   }
+body.single .vcard a, body.single .posted-on a {   color:color('blue-grey', 'lighten-5');   }
+body.single .vcard a:visited, body.single .posted-on a:visited  {   color:color('blue-grey', 'lighten-4');  }
+.single-featured-image h2 {
+	color:white;
+}
+.single-featured-image h2 a {
+	color:$primary-color-light;
+}
+.single-featured-image h2 a:visited {
+	color:$primary-color-light;
+}
+.single-featured-image h2 a:hover {
+	color:$primary-color-light;
+}

@@ -12,6 +12,9 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
+            <?php // the featured image with default settings
+    the_featured_image("featured", "ig-sierra cutline-image"); 
+?>
             <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 			<?php get_template_part( 'content', 'single' ); ?>
             </article>

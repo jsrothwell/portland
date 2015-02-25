@@ -1,0 +1,39 @@
+//Variables for Media Queries
+$retina-phone:   "only screen and (min-device-width : 320px) and (max-device-width : 568px)";
+$retina-phone-landscape: "only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : landscape)";
+$phones: "only screen and (min-width : 30em)";
+$tablets:    "only screen and (min-width : 48em)";
+$desktop-and-tablet:    "only screen and (min-width : 62em)";
+$wide-screens:    "only screen and (min-width : 75em)";
+$IE: "screen and (-ms-high-contrast: active),(-ms-high-contrast: none)";
+$IE-phone:   "screen and (-ms-high-contrast: active),(-ms-high-contrast: none) and (min-width : 20em)";
+$IE-retina-phone:    "screen and (-ms-high-contrast: active),(-ms-high-contrast: none) and (min-width : 20em)";
+$IE-phones:    "screen and (-ms-high-contrast: active),(-ms-high-contrast: none) and (min-width : 30em)";
+$IE-tablets:    "screen and (-ms-high-contrast: active),(-ms-high-contrast: none) and (min-width : 48em)";
+$IE-desktop-and-tablet:    "screen and (-ms-high-contrast: active),(-ms-high-contrast: none) and (min-width : 62em)";
+$mozilla-windows:   "not all and (-moz-windows-compositor)";
+$mozilla: "$media not all and (-moz-device-pixel-ratio)";
+$opera: "not screen and (1)";
+$ff-1: "all and (min--moz-device-pixel-ratio:0)";
+$ff-2: "all and (-moz-images-in-menus:0)";
+$ff-29: "all and (min--moz-device-pixel-ratio:0) and (min-resolution: 3e1dpcm)";
+
+
+//Colour Variables
+
+ $primary-color: color("grey", "lighten-5");
+  $primary-color-light: false;
+  $primary-color-dark: false;
+  @if not $primary-color-light {
+    $primary-color-light: lighten($primary-color, 15%);
+  }
+  @if not $primary-color-dark {
+    $primary-color-dark: darken($primary-color, 15%);
+  }
+  $secondary-color: color("red", "lighten-1");
+  $success-color: color("green", "base");
+  $error-color: color("deep-orange", "base");
+
+  $link-color: color("orange", "darken-1");
+  $button-color: $link-color;
+  $radius: 3px;

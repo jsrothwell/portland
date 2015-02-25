@@ -5,11 +5,9 @@
 ?>
  
     
-<?php // the featured image with default settings
-    the_featured_image("featured", "ig-mayfair noisy"); 
-?>
 
-<header class="entry-header single-featured-image col s6 offset-s3">
+
+<header class="entry-header single-featured-image col s10 offset-s1 m6 offset-m3">
     <div class="col s6 single-post-title post-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
     </div>
@@ -19,7 +17,7 @@
         </div><!-- .entry-meta --></div>
 	</header><!-- .entry-header -->
 
-<article id="post-<?php the_ID(); ?>" class="col s10 offset-s1">
+<article id="post-<?php the_ID(); ?>" class="col s10 offset-s1 copy-body">
 	
 
 	<div class="entry-content inline-comments">

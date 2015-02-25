@@ -1,0 +1,123 @@
+.fixedBar {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    z-index: 999;
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    -ms-transition: height 0.3s;
+    -o-transition: height 0.3s;
+    transition: height 0.3s;
+    @media #{$retina-phone} {
+        display:none;
+    }
+    @media #{$phones} {
+        display:none;
+    }
+}
+.fixedBar h1#logo {
+    display: inline-block;
+    height: 150px;
+    line-height: 150px;
+    float: left;
+    font-family: "Oswald", sans-serif;
+    font-size: 60px;
+    color: white;
+    font-weight: 400;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.fixedBar nav {
+    display: inline-block;
+    float: right;
+}
+.fixedBar nav a {
+    line-height: 150px;
+    margin-left: 20px;
+    color: #9fdbfc;
+    font-weight: 700;
+    font-size: 18px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.fixedBar nav a:hover {
+    color: white;
+}
+.fixedBar.smaller {
+    height: 0;
+    transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+}
+.fixedBar.smaller h1#logo {
+    width: 150px;
+    height: 75px;
+    line-height: 75px;
+    font-size: 30px;
+}
+.fixedBar.smaller nav a {
+    line-height: 75px;
+}
+
+@media all and (max-width: 660px) {
+    .fixedBar h1#logo {
+        display: block;
+        float: none;
+        margin: 0 auto;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+    }
+    .fixedBar nav {
+        display: block;
+        float: none;
+        height: 50px;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .fixedBar nav a {
+        line-height: 50px;
+        margin: 0 10px;
+    }
+    .fixedBar.smaller {
+        height: 75px;
+    }
+    .fixedBar.smaller h1#logo {
+        height: 40px;
+        line-height: 40px;
+        font-size: 30px;
+    }
+    .fixedBar.smaller nav {
+        height: 35px;
+    }
+    .fixedBar.smaller nav a {
+        line-height: 35px;
+    }
+}
+
+.fixedBar {
+  bottom: 0px;
+  left: 0;
+  padding: 0px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 99999;
+  float: left;
+  margin: 0px 0 0;
+  opacity: 0.95;
+  height: 60px;
+}
+
+.fixedBar {
+  background: $primary-color;
+  color: $primary-color-dark;
+}
