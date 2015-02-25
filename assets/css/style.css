@@ -10253,10 +10253,6 @@ p#form-allowed-tags {
   font-size: 0.8rem;
 }
 
-.fixedBar {
-  font: bold  16px Arial, Helvetica, sans-serif;
-}
-
 .floatingFooter {
   font-weight: 100;
 }
@@ -10386,112 +10382,54 @@ h1.entry-title {
   filter: sepia(0.15) saturate(1.5) contrast(0.9);
 }
 
+/*WPBeginner Footer Bar*/
 .fixedBar {
-  background: #fafafa;
-  color: #d4d4d4;
-  width: 100%;
-  float: left;
-  margin: 0px 0 0;
-  opacity: 0.95;
-  height: 60px;
-  overflow: hidden;
-  position: fixed;
+  background: #000;
   bottom: 0px;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
   left: 0;
   padding: 0px 0;
+  position: fixed;
+  font-size: 16px;
+  width: 100%;
   z-index: 99999;
-  -webkit-transition: height 0.3s;
-  transition: height 0.3s;
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-  .fixedBar {
-    display: none;
-  }
-  .fixedBar h1#logo {
-    display: block;
-    float: none;
-    margin: 0 auto;
-    height: 100px;
-    line-height: 100px;
-    text-align: center;
-  }
-  .fixedBar nav {
-    display: block;
-    float: none;
-    height: 50px;
-    text-align: center;
-    margin: 0 auto;
-  }
-  .fixedBar nav a, .fixedBar nav div.site-branding a:visited, div.site-branding .fixedBar nav a:visited {
-    line-height: 50px;
-    margin: 0 10px;
-  }
-}
-@media only screen and (min-width: 30em) {
-  .fixedBar {
-    display: none;
-  }
-}
-.fixedBar h1#logo {
-  display: inline-block;
-  height: 150px;
-  line-height: 150px;
   float: left;
-  font-family: "Oswald", sans-serif;
-  font-size: 60px;
-  color: white;
-  font-weight: 400;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.fixedBar nav {
-  display: inline-block;
-  float: right;
-}
-.fixedBar nav a, .fixedBar nav div.site-branding a:visited, div.site-branding .fixedBar nav a:visited {
-  line-height: 150px;
-  margin-left: 20px;
-  color: #9fdbfc;
-  font-weight: 700;
-  font-size: 18px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-.fixedBar nav a:hover {
-  color: white;
+  vertical-align: middle;
+  margin: 0px 0 0;
+  opacity: 0.95;
+  font-weight: bold;
 }
 
-.fixedBar.smaller {
-  height: 0;
-  transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -webkit-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
+.boxfloat {
+  text-align: center;
+  width: 920px;
+  margin: 0 auto;
 }
-.fixedBar.smaller h1#logo {
-  width: 150px;
-  height: 75px;
-  line-height: 75px;
-  font-size: 30px;
+
+#tips, #tips li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-.fixedBar.smaller nav a {
-  line-height: 75px;
+
+#tips {
+  width: 920px;
+  font-size: 20px;
+  line-height: 120%;
 }
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-  .fixedBar.smaller {
-    height: 75px;
-  }
-  .fixedBar.smaller h1#logo {
-    height: 40px;
-    line-height: 40px;
-    font-size: 30px;
-  }
-  .fixedBar.smaller nav {
-    height: 35px;
-  }
-  .fixedBar.smaller nav a {
-    line-height: 35px;
-  }
+
+#tips li {
+  padding: 15px 0;
+  display: none;
+}
+
+#tips li a {
+  color: #fff;
+}
+
+#tips li a:hover {
+  text-decoration: none;
 }
 
 /*--------------------------------------------------------------
@@ -10954,13 +10892,6 @@ footer.site-footer {
 
 .form-submit {
   display: none;
-}
-
-.boxfloat {
-  text-align: center;
-  width: 90%;
-  margin: auto;
-  height: 100%;
 }
 
 .borderRight {
