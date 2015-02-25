@@ -73,6 +73,7 @@ bower_components
 .bower-cache
 .bower-registry
 .bower-tmp
+assets/bower_components/
 
 # Created by https://www.gitignore.io
 
