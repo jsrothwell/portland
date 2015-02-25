@@ -47,15 +47,15 @@ background: white;
 body.single-post header.entry-header {   color:$primary-color-light;   }
 body.single .vcard a, body.single .posted-on a {   color:color('blue-grey', 'lighten-5');   }
 body.single .vcard a:visited, body.single .posted-on a:visited  {   color:color('blue-grey', 'lighten-4');  }
-.single-featured-image h2 {
+.single-featured-image  {
+    h2 {
 	color:white;
-}
-.single-featured-image h2 a {
+        a {
+	color:$primary-color-light;
+        &:visited {
 	color:$primary-color-light;
 }
-.single-featured-image h2 a:visited {
+        &:hover {
 	color:$primary-color-light;
-}
-.single-featured-image h2 a:hover {
-	color:$primary-color-light;
-}
+        }
+        }}}

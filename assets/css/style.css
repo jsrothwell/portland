@@ -6200,7 +6200,7 @@ span.badge.new:after {
 .container {
   padding: 0 1.5rem;
   margin: 0 auto;
-  max-width: none !important;
+  max-width: 1280px;
   width: 90%;
 }
 
@@ -6511,6 +6511,7 @@ span.badge.new:after {
 nav {
   color: #fff;
   background-color: #ee6e73;
+  width: 100%;
   height: 56px;
   line-height: 56px;
 }
@@ -10090,7 +10091,6 @@ button,
 input,
 select,
 textarea {
-  color: #404040;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
@@ -10125,7 +10125,6 @@ address {
 }
 
 pre {
-  background: #eee;
   font-family: "Courier 10 Pitch", Courier, monospace;
   font-size: 15px;
   font-size: 0.9375rem;
@@ -10153,7 +10152,6 @@ acronym {
 
 mark,
 ins {
-  background: #fff9c0;
   text-decoration: none;
 }
 
@@ -10256,9 +10254,7 @@ p#form-allowed-tags {
 }
 
 .fixedBar {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: bold;
+  font: bold  16px Arial, Helvetica, sans-serif;
 }
 
 .floatingFooter {
@@ -10290,7 +10286,7 @@ h1.entry-title {
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .entry-meta {
-    font-size: 100%;
+    font-size: 0.625em;
     line-height: 110%;
   }
 }
@@ -10391,12 +10387,19 @@ h1.entry-title {
 }
 
 .fixedBar {
+  background: #fafafa;
+  color: #d4d4d4;
   width: 100%;
-  height: 150px;
+  float: left;
+  margin: 0px 0 0;
+  opacity: 0.95;
+  height: 60px;
   overflow: hidden;
   position: fixed;
+  bottom: 0px;
   left: 0;
-  z-index: 999;
+  padding: 0px 0;
+  z-index: 99999;
   -webkit-transition: height 0.3s;
   transition: height 0.3s;
 }
@@ -10404,13 +10407,31 @@ h1.entry-title {
   .fixedBar {
     display: none;
   }
+  .fixedBar h1#logo {
+    display: block;
+    float: none;
+    margin: 0 auto;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+  }
+  .fixedBar nav {
+    display: block;
+    float: none;
+    height: 50px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .fixedBar nav a, .fixedBar nav div.site-branding a:visited, div.site-branding .fixedBar nav a:visited {
+    line-height: 50px;
+    margin: 0 10px;
+  }
 }
 @media only screen and (min-width: 30em) {
   .fixedBar {
     display: none;
   }
 }
-
 .fixedBar h1#logo {
   display: inline-block;
   height: 150px;
@@ -10423,12 +10444,10 @@ h1.entry-title {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-
 .fixedBar nav {
   display: inline-block;
   float: right;
 }
-
 .fixedBar nav a, .fixedBar nav div.site-branding a:visited, div.site-branding .fixedBar nav a:visited {
   line-height: 150px;
   margin-left: 20px;
@@ -10438,7 +10457,6 @@ h1.entry-title {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-
 .fixedBar nav a:hover {
   color: white;
 }
@@ -10450,75 +10468,30 @@ h1.entry-title {
   -webkit-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
 }
-
 .fixedBar.smaller h1#logo {
   width: 150px;
   height: 75px;
   line-height: 75px;
   font-size: 30px;
 }
-
 .fixedBar.smaller nav a {
   line-height: 75px;
 }
-
-@media all and (max-width: 660px) {
-  .fixedBar h1#logo {
-    display: block;
-    float: none;
-    margin: 0 auto;
-    height: 100px;
-    line-height: 100px;
-    text-align: center;
-  }
-
-  .fixedBar nav {
-    display: block;
-    float: none;
-    height: 50px;
-    text-align: center;
-    margin: 0 auto;
-  }
-
-  .fixedBar nav a, .fixedBar nav div.site-branding a:visited, div.site-branding .fixedBar nav a:visited {
-    line-height: 50px;
-    margin: 0 10px;
-  }
-
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .fixedBar.smaller {
     height: 75px;
   }
-
   .fixedBar.smaller h1#logo {
     height: 40px;
     line-height: 40px;
     font-size: 30px;
   }
-
   .fixedBar.smaller nav {
     height: 35px;
   }
-
   .fixedBar.smaller nav a {
     line-height: 35px;
   }
-}
-.fixedBar {
-  bottom: 0px;
-  left: 0;
-  padding: 0px 0;
-  position: fixed;
-  width: 100%;
-  z-index: 99999;
-  float: left;
-  margin: 0px 0 0;
-  opacity: 0.95;
-  height: 60px;
-}
-
-.fixedBar {
-  background: #fafafa;
-  color: #d4d4d4;
 }
 
 /*--------------------------------------------------------------
@@ -10618,22 +10591,6 @@ textarea {
 /*--------------------------------------------------------------
 5.1 Links
 --------------------------------------------------------------*/
-a, div.site-branding a, div.site-branding a:visited, ul li a {
-  color: royalblue;
-}
-
-a:visited, div.site-branding a:visited {
-  color: purple;
-}
-
-a:hover, div.site-branding a:hover,
-a:focus,
-div.site-branding a:focus,
-a:active,
-div.site-branding a:active {
-  color: midnightblue;
-}
-
 a:focus, div.site-branding a:focus {
   outline: thin dotted;
 }
@@ -10702,7 +10659,7 @@ div.site-branding a:active {
   display: none;
 }
 
-@media screen and (max-width: 600px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .menu-toggle,
   .main-navigation.toggled .nav-menu {
     display: block;
@@ -10734,6 +10691,10 @@ div.site-branding a:active {
   float: right;
   text-align: right;
   width: 50%;
+}
+
+nav {
+  width: auto !important;
 }
 
 /*--------------------------------------------------------------
@@ -10897,8 +10858,7 @@ header#masthead {
   z-index: 100000;
   height: 60px;
 }
-
-#masthead:after {
+header#masthead:after {
   content: ".";
   visibility: hidden;
   height: 0;
@@ -10969,7 +10929,6 @@ nav.main-navigation li {
 .main-navigation ul li:hover > ul {
   margin-top: 37px;
 }
-
 .main-navigation ul ul {
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -11096,7 +11055,6 @@ body.single-post header.entry-header, .main-navigation ul ul.single-post header.
   margin: auto;
   overflow: hidden;
 }
-
 .single-featured-image h2 {
   position: absolute;
   bottom: 0px;
@@ -11183,6 +11141,10 @@ body.blog .site-main, .main-navigation ul ul.blog .site-main, button i.blog .sit
 
 body.single-post .site-main, .main-navigation ul ul.single-post .site-main, button i.single-post .site-main, .side-comment.has-comments.active .single-post.comments-wrapper .site-main {
   margin-top: auto;
+}
+
+.container {
+  max-width: none !important;
 }
 
 /*--------------------------------------------------------------
@@ -11390,15 +11352,12 @@ body.single .vcard a:visited, .main-navigation ul ul.single .vcard a:visited, bu
 .single-featured-image h2 {
   color: white;
 }
-
 .single-featured-image h2 a, .single-featured-image h2 div.site-branding a:visited, div.site-branding .single-featured-image h2 a:visited {
   color: white;
 }
-
 .single-featured-image h2 a:visited {
   color: white;
 }
-
 .single-featured-image h2 a:hover {
   color: white;
 }

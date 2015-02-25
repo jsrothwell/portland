@@ -34,13 +34,15 @@
 }
 
 header#masthead, nav {   border-bottom:1px solid $primary-color-dark;   }
-header#masthead {   position:fixed; top:0; margin:auto; z-index:100000; height:60px;    }
-#masthead:after{
-    content: ".";
-    visibility: hidden;
-    height: 0;
-    clear:both;
-    display: block;
+
+header#masthead {   position:fixed; top:0; margin:auto; z-index:100000; height:60px;
+    &:after{
+        content: ".";
+        visibility: hidden;
+        height: 0;
+        clear:both;
+        display: block;
+    }
 }
 body.single-post header#masthead {   position:inherit; margin:auto; height:60px; }
 
@@ -104,13 +106,16 @@ li  {
     height: 60px;
     box-shadow: none;
 }
-.main-navigation ul li:hover > ul {
+.main-navigation    {
+        ul  {
+            li:hover > ul {
   margin-top: 37px;
         }
-.main-navigation ul ul  {
+            ul  {
  box-shadow:none;
     border:1px solid $primary-color-dark;
 }
+        }}
 
 div.container   {   margin-top:2.6em;    }
 body.single div.container   {   margin-top:0;    }
@@ -119,8 +124,6 @@ footer.site-footer  {   min-height:100px;padding-top:20px;   }
 .form-submit {
     display: none;
 }
-
-
 
 .boxfloat {
   text-align: center;
@@ -135,21 +138,9 @@ footer.site-footer  {   min-height:100px;padding-top:20px;   }
  border-left:1px solid $primary-color-dark;   
 }
 
-
-
 span.edit-link  {   float:right;
         padding:20px;
 }
- 
-
-
-
-
-
-
-
-
-
 
 div.pp_pic_holder {
 z-index: 120000 !important;
@@ -160,21 +151,20 @@ z-index: 110000 !important;
 }
 
 .comments-wrapper {
-padding: 20px;
-padding-bottom: 20px !important;
-border: 1px solid grey;
-border-radius: $radius;
+    padding: 20px;
+    padding-bottom: 20px !important;
+    border: 1px solid grey;
+    border-radius: $radius;
 }
-.side-comment.has-comments.active   .comments-wrapper {
+.side-comment.has-comments.active .comments-wrapper {
     padding: 20px;
     padding-bottom:20px;
 }
 
 .entry-content.inline-comments.side-comments-open {
-margin-left: 220px;
+    margin-left: 220px;
 }
-body.single header  {   position:relative;
-}
+body.single header  {   position:relative;  }
 h1.entry-title  {
     margin-top: 60px;
 }
@@ -211,9 +201,7 @@ body.single-post header.entry-header {   text-align:center;padding-bottom:100px;
 	width: 600px;
     margin:  auto;
 	overflow:hidden;
-    
-}
-.single-featured-image h2 {
+    h2 {
 	position:absolute;
 	bottom:0px;
 	left:0px;
@@ -223,6 +211,7 @@ body.single-post header.entry-header {   text-align:center;padding-bottom:100px;
 	filter:alpha(opacity=20);
 	opacity:.80;
 	display: block;
+}
 }
 
 

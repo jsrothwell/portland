@@ -22,7 +22,6 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -57,7 +56,6 @@ address {
 }
 
 pre {
-	background: #eee;
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 15px;
 	font-size: 0.9375rem;
@@ -85,7 +83,6 @@ acronym {
 
 mark,
 ins {
-	background: #fff9c0;
 	text-decoration: none;
 }
 
@@ -185,9 +182,7 @@ font-size: 0.8rem;
 }
 
 .fixedBar {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  font-weight: bold;
+  font: bold  16px Arial, Helvetica, sans-serif;
 }
 
 .floatingFooter {
@@ -208,7 +203,7 @@ h1.entry-title  {
 }
 
 .entry-meta {   
-    @media #{$retina-phone} {  font-size:100%;line-height:110%; }
+    @media #{$retina-phone} {  font-size:$t-10px;line-height:110%; }
     //@media #{$tablets} {  font-size:2.4rem; }*/
     font-size: $t-30px;
     line-height:$t-20px;
