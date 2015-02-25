@@ -107,6 +107,8 @@ a:active {
 	.menu-toggle,
 	.main-navigation.toggled .nav-menu {
 		display: block;
+        position: relative;
+        z-index: 100;
 	}
 
 	.main-navigation ul {

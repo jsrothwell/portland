@@ -2201,7 +2201,7 @@ html {
 /**
  * Remove default margin.
  */
-body, .main-navigation ul ul, button i, .side-comment.has-comments.active .comments-wrapper, .side-comment.has-comments.active .post-header:before {
+body, .main-navigation ul ul, button i, .side-comment.has-comments.active .comments-wrapper {
   margin: 0;
 }
 
@@ -9869,7 +9869,7 @@ html {
   -ms-text-size-adjust: 100%;
 }
 
-body, .main-navigation ul ul, button i, .side-comment.has-comments.active .comments-wrapper, .side-comment.has-comments.active .post-header:before {
+body, .main-navigation ul ul, button i, .side-comment.has-comments.active .comments-wrapper {
   margin: 0;
 }
 
@@ -10086,7 +10086,7 @@ th {
 /*--------------------------------------------------------------
 2.0 Typography
 --------------------------------------------------------------*/
-body, .main-navigation ul ul, button i, .side-comment.has-comments.active .comments-wrapper, .side-comment.has-comments.active .post-header:before,
+body, .main-navigation ul ul, button i, .side-comment.has-comments.active .comments-wrapper,
 button,
 input,
 select,
@@ -10178,7 +10178,7 @@ html {
           box-sizing: inherit;
 }
 
-body, .main-navigation ul ul, button i, .side-comment.has-comments.active .comments-wrapper, .side-comment.has-comments.active .post-header:before {
+body, .main-navigation ul ul, button i, .side-comment.has-comments.active .comments-wrapper {
   background: #fff;
   /* Fallback for when there is no custom background color defined. */
 }
@@ -10707,6 +10707,8 @@ div.site-branding a:active {
   .menu-toggle,
   .main-navigation.toggled .nav-menu {
     display: block;
+    position: relative;
+    z-index: 100;
   }
 
   .main-navigation ul {
@@ -10898,7 +10900,7 @@ header#masthead {
   height: 60px;
 }
 
-body.single-post header#masthead, .main-navigation ul ul.single-post header#masthead, button i.single-post header#masthead, .side-comment.has-comments.active .single-post.comments-wrapper header#masthead, .side-comment.has-comments.active .single-post.post-header:before header#masthead {
+body.single-post header#masthead, .main-navigation ul ul.single-post header#masthead, button i.single-post header#masthead, .side-comment.has-comments.active .single-post.comments-wrapper header#masthead {
   position: inherit;
   margin: auto;
   width: 100%;
@@ -10950,7 +10952,7 @@ div.container {
   margin-top: 2.6em;
 }
 
-body.single div.container, .main-navigation ul ul.single div.container, button i.single div.container, .side-comment.has-comments.active .single.comments-wrapper div.container, .side-comment.has-comments.active .single.post-header:before div.container {
+body.single div.container, .main-navigation ul ul.single div.container, button i.single div.container, .side-comment.has-comments.active .single.comments-wrapper div.container {
   margin-top: 0;
 }
 
@@ -10992,7 +10994,7 @@ span.edit-link {
     overflow: hidden;
     border: #d4d4d4;
     margin-top: 4.2em;
-    margin-left: -175px;
+    margin-left: -257px;
     width: 320px;
   }
   .header-menu-container .header-menu-dropdown {
@@ -11021,14 +11023,14 @@ div.pp_overlay {
   z-index: 110000 !important;
 }
 
-.comments-wrapper, .post-header:before {
+.comments-wrapper {
   padding: 20px;
   padding-bottom: 20px !important;
   border: 1px solid grey;
   border-radius: 3px;
 }
 
-.side-comment.has-comments.active .comments-wrapper, .side-comment.has-comments.active .post-header:before {
+.side-comment.has-comments.active .comments-wrapper {
   padding: 20px;
   padding-bottom: 20px;
 }
@@ -11037,7 +11039,7 @@ div.pp_overlay {
   margin-left: 220px;
 }
 
-body.single header, .main-navigation ul ul.single header, button i.single header, .side-comment.has-comments.active .single.comments-wrapper header, .side-comment.has-comments.active .single.post-header:before header {
+body.single header, .main-navigation ul ul.single header, button i.single header, .side-comment.has-comments.active .single.comments-wrapper header {
   position: relative;
 }
 
@@ -11045,7 +11047,7 @@ h1.entry-title {
   margin-top: 60px;
 }
 
-body.single h1.entry-title, .main-navigation ul ul.single h1.entry-title, button i.single h1.entry-title, .side-comment.has-comments.active .single.comments-wrapper h1.entry-title, .side-comment.has-comments.active .single.post-header:before h1.entry-title {
+body.single h1.entry-title, .main-navigation ul ul.single h1.entry-title, button i.single h1.entry-title, .side-comment.has-comments.active .single.comments-wrapper h1.entry-title {
   margin-top: 0;
   text-align: right;
 }
@@ -11081,7 +11083,7 @@ div#content {
   padding: 0;
 }
 
-body.single-post header.entry-header, .main-navigation ul ul.single-post header.entry-header, button i.single-post header.entry-header, .side-comment.has-comments.active .single-post.comments-wrapper header.entry-header, .side-comment.has-comments.active .single-post.post-header:before header.entry-header {
+body.single-post header.entry-header, .main-navigation ul ul.single-post header.entry-header, button i.single-post header.entry-header, .side-comment.has-comments.active .single-post.comments-wrapper header.entry-header {
   text-align: center;
   padding-bottom: 100px;
 }
@@ -11142,16 +11144,16 @@ body.single-post header.entry-header, .main-navigation ul ul.single-post header.
   border-bottom: 5px solid #d4d4d4;
 }
 
-body.single-post article, .main-navigation ul ul.single-post article, button i.single-post article, .side-comment.has-comments.active .single-post.comments-wrapper article, .side-comment.has-comments.active .single-post.post-header:before article {
+body.single-post article, .main-navigation ul ul.single-post article, button i.single-post article, .side-comment.has-comments.active .single-post.comments-wrapper article {
   margin-top: -400px;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-  body.single-post article, .main-navigation ul ul.single-post article, button i.single-post article, .side-comment.has-comments.active .single-post.comments-wrapper article, .side-comment.has-comments.active .single-post.post-header:before article {
+  body.single-post article, .main-navigation ul ul.single-post article, button i.single-post article, .side-comment.has-comments.active .single-post.comments-wrapper article {
     margin-top: -120px;
   }
 }
 @media only screen and (min-width: 48em) {
-  body.single-post article, .main-navigation ul ul.single-post article, button i.single-post article, .side-comment.has-comments.active .single-post.comments-wrapper article, .side-comment.has-comments.active .single-post.post-header:before article {
+  body.single-post article, .main-navigation ul ul.single-post article, button i.single-post article, .side-comment.has-comments.active .single-post.comments-wrapper article {
     margin-top: -350px;
   }
 }
@@ -11294,7 +11296,7 @@ object {
   display: block;
 }
 
-body, .main-navigation ul ul, button i, .side-comment.has-comments.active .comments-wrapper, .side-comment.has-comments.active .post-header:before {
+body, .main-navigation ul ul, button i, .side-comment.has-comments.active .comments-wrapper {
   background-color: #fafafa;
   color: #adadad;
 }
@@ -11352,7 +11354,7 @@ footer {
   }
 }
 
-.comments-wrapper, .post-header:before {
+.comments-wrapper {
   background: white;
 }
 
@@ -11360,15 +11362,15 @@ footer {
   background-color: #5f6673;
 }
 
-body.single-post header.entry-header, .main-navigation ul ul.single-post header.entry-header, button i.single-post header.entry-header, .side-comment.has-comments.active .single-post.comments-wrapper header.entry-header, .side-comment.has-comments.active .single-post.post-header:before header.entry-header {
+body.single-post header.entry-header, .main-navigation ul ul.single-post header.entry-header, button i.single-post header.entry-header, .side-comment.has-comments.active .single-post.comments-wrapper header.entry-header {
   color: white;
 }
 
-body.single .vcard a, .main-navigation ul ul.single .vcard a, button i.single .vcard a, .side-comment.has-comments.active .single.comments-wrapper .vcard a, .side-comment.has-comments.active .single.post-header:before .vcard a, body.single .posted-on a, .main-navigation ul ul.single .posted-on a, button i.single .posted-on a, .side-comment.has-comments.active .single.comments-wrapper .posted-on a, .side-comment.has-comments.active .single.post-header:before .posted-on a {
+body.single .vcard a, .main-navigation ul ul.single .vcard a, button i.single .vcard a, .side-comment.has-comments.active .single.comments-wrapper .vcard a, body.single .posted-on a, .main-navigation ul ul.single .posted-on a, button i.single .posted-on a, .side-comment.has-comments.active .single.comments-wrapper .posted-on a {
   color: #eceff1;
 }
 
-body.single .vcard a:visited, .main-navigation ul ul.single .vcard a:visited, button i.single .vcard a:visited, .side-comment.has-comments.active .single.comments-wrapper .vcard a:visited, .side-comment.has-comments.active .single.post-header:before .vcard a:visited, body.single .posted-on a:visited, .main-navigation ul ul.single .posted-on a:visited, button i.single .posted-on a:visited, .side-comment.has-comments.active .single.comments-wrapper .posted-on a:visited, .side-comment.has-comments.active .single.post-header:before .posted-on a:visited {
+body.single .vcard a:visited, .main-navigation ul ul.single .vcard a:visited, button i.single .vcard a:visited, .side-comment.has-comments.active .single.comments-wrapper .vcard a:visited, body.single .posted-on a:visited, .main-navigation ul ul.single .posted-on a:visited, button i.single .posted-on a:visited, .side-comment.has-comments.active .single.comments-wrapper .posted-on a:visited {
   color: #cfd8dc;
 }
 
@@ -11386,329 +11388,4 @@ body.single .vcard a:visited, .main-navigation ul ul.single .vcard a:visited, bu
 
 .single-featured-image h2 a:hover {
   color: white;
-}
-
-header#masthead, nav {
-  border-bottom: 1px solid #d4d4d4;
-}
-
-header#masthead {
-  position: fixed;
-  top: 0;
-  margin: auto;
-  z-index: 100000;
-  width: 100%;
-  height: 60px;
-}
-
-body.single-post header#masthead, .main-navigation ul ul.single-post header#masthead, button i.single-post header#masthead, .side-comment.has-comments.active .single-post.comments-wrapper header#masthead, .side-comment.has-comments.active .single-post.post-header:before header#masthead {
-  position: inherit;
-  margin: auto;
-  width: 100%;
-  height: 60px;
-}
-
-div.site-branding {
-  float: left;
-  margin-left: 1.0em;
-}
-div.site-branding h1.site-title {
-  margin: 1em 0;
-  float: left;
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-  div.site-branding h1.site-title {
-    margin-top: 1.4em;
-  }
-}
-@media only screen and (min-width: 30em) {
-  div.site-branding h1.site-title {
-    margin-top: 1.2rem;
-  }
-}
-
-nav.main-navigation {
-  position: absolute;
-  top: 0;
-  right: 20px;
-  height: 60px;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-nav.main-navigation li {
-  height: 60px;
-}
-
-.main-navigation ul li:hover > ul {
-  margin-top: 37px;
-}
-
-.main-navigation ul ul {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  border: 1px solid #d4d4d4;
-}
-
-div.container {
-  margin-top: 2.6em;
-}
-
-body.single div.container, .main-navigation ul ul.single div.container, button i.single div.container, .side-comment.has-comments.active .single.comments-wrapper div.container, .side-comment.has-comments.active .single.post-header:before div.container {
-  margin-top: 0;
-}
-
-hr.footer-divider-top {
-  height: 1px;
-}
-
-footer.site-footer {
-  min-height: 100px;
-  padding-top: 20px;
-}
-
-.form-submit {
-  display: none;
-}
-
-.boxfloat {
-  text-align: center;
-  width: 90%;
-  margin: auto;
-  height: 100%;
-}
-
-.borderRight {
-  border-right: 1px solid #d4d4d4;
-}
-
-.borderLeft {
-  border-left: 1px solid #d4d4d4;
-}
-
-span.edit-link {
-  float: right;
-  padding: 20px;
-}
-
-button.menu-toggle {
-  border: 0;
-  background-color: transparent;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  float: right;
-  line-height: 2.1rem;
-  vertical-align: middle;
-}
-
-.btn, .btn-large, .btn-floating, .btn-large, .card, .card-panel, .collapsible, .dropdown-content, .toast, .z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, ul.side-nav, nav, ul.side-nav {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-  .header-menu-container {
-    overflow: hidden;
-    border: #d4d4d4;
-    margin-top: 4.2em;
-    margin-left: -175px;
-    width: 320px;
-  }
-  .header-menu-container .header-menu-dropdown {
-    border: 1px solid #adadad;
-  }
-  .header-menu-container .header-menu-dropdown li {
-    width: 320px;
-    border-bottom: 1px solid #adadad;
-  }
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
-  .header-menu-container {
-    margin-left: -321px;
-    width: 568px;
-  }
-  .header-menu-container .header-menu-dropdown li {
-    width: 568px;
-  }
-}
-
-div.pp_pic_holder {
-  z-index: 120000 !important;
-}
-
-div.pp_overlay {
-  z-index: 110000 !important;
-}
-
-.comments-wrapper, .post-header:before {
-  padding: 20px;
-  padding-bottom: 20px !important;
-  border: 1px solid grey;
-  border-radius: 3px;
-}
-
-.side-comment.has-comments.active .comments-wrapper, .side-comment.has-comments.active .post-header:before {
-  padding: 20px;
-  padding-bottom: 20px;
-}
-
-.entry-content.inline-comments.side-comments-open {
-  margin-left: 220px;
-}
-
-body.single header, .main-navigation ul ul.single header, button i.single header, .side-comment.has-comments.active .single.comments-wrapper header, .side-comment.has-comments.active .single.post-header:before header {
-  position: relative;
-}
-
-h1.entry-title {
-  margin-top: 60px;
-}
-
-body.single h1.entry-title, .main-navigation ul ul.single h1.entry-title, button i.single h1.entry-title, .side-comment.has-comments.active .single.comments-wrapper h1.entry-title, .side-comment.has-comments.active .single.post-header:before h1.entry-title {
-  margin-top: 0;
-  text-align: right;
-}
-
-.post-header:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
-  left: 0;
-  background: #fff;
-}
-
-.post-meta:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
-  left: 60%;
-  background-color: #5f6673;
-  text-align: left;
-}
-
-.hundred-percent {
-  width: 100%;
-}
-
-form#searchform {
-  margin-top: 3.0em;
-}
-
-div#content {
-  padding: 0;
-}
-
-body.single-post header.entry-header, .main-navigation ul ul.single-post header.entry-header, button i.single-post header.entry-header, .side-comment.has-comments.active .single-post.comments-wrapper header.entry-header, .side-comment.has-comments.active .single-post.post-header:before header.entry-header {
-  text-align: center;
-  color: white;
-  padding-bottom: 100px;
-}
-
-body.single .vcard a, .main-navigation ul ul.single .vcard a, button i.single .vcard a, .side-comment.has-comments.active .single.comments-wrapper .vcard a, .side-comment.has-comments.active .single.post-header:before .vcard a, body.single .posted-on a, .main-navigation ul ul.single .posted-on a, button i.single .posted-on a, .side-comment.has-comments.active .single.comments-wrapper .posted-on a, .side-comment.has-comments.active .single.post-header:before .posted-on a {
-  color: #eceff1;
-}
-
-body.single .vcard a:visited, .main-navigation ul ul.single .vcard a:visited, button i.single .vcard a:visited, .side-comment.has-comments.active .single.comments-wrapper .vcard a:visited, .side-comment.has-comments.active .single.post-header:before .vcard a:visited, body.single .posted-on a:visited, .main-navigation ul ul.single .posted-on a:visited, button i.single .posted-on a:visited, .side-comment.has-comments.active .single.comments-wrapper .posted-on a:visited, .side-comment.has-comments.active .single.post-header:before .posted-on a:visited {
-  color: #cfd8dc;
-}
-
-.single-featured-image {
-  position: relative;
-  width: 600px;
-  margin: auto;
-  overflow: hidden;
-}
-
-.single-featured-image h2 {
-  background-color: Black;
-  color: white;
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  padding-left: 10px;
-  padding: 10px;
-  -moz-opacity: .80;
-  filter: alpha(opacity=20);
-  opacity: .80;
-  display: block;
-}
-
-.single-featured-image h2 a, .single-featured-image h2 div.site-branding a:visited, div.site-branding .single-featured-image h2 a:visited {
-  color: white;
-}
-
-.single-featured-image h2 a:visited {
-  color: white;
-}
-
-.single-featured-image h2 a:hover {
-  color: white;
-}
-
-.single-post-title {
-  padding: 20px;
-  height: 15em;
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-  .single-post-title {
-    height: 5em;
-  }
-}
-
-.single-post-title.right {
-  border-left: 5px solid rbga(white, 0.3);
-}
-
-.entry-meta {
-  text-align: left;
-  margin-top: 0.7em;
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-  .entry-meta {
-    margin-top: auto;
-  }
-}
-
-.col.s6.single-post-title.post-meta.right {
-  border-left: 2px solid #fafafa;
-}
-
-.col.s6.single-post-title.post-header {
-  border-right: 3px solid #d4d4d4;
-}
-
-.wp-post-image {
-  border-top: 5px solid #d4d4d4;
-  border-bottom: 5px solid #d4d4d4;
-}
-
-body.single-post article, .main-navigation ul ul.single-post article, button i.single-post article, .side-comment.has-comments.active .single-post.comments-wrapper article, .side-comment.has-comments.active .single-post.post-header:before article {
-  margin-top: -400px;
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-  body.single-post article, .main-navigation ul ul.single-post article, button i.single-post article, .side-comment.has-comments.active .single-post.comments-wrapper article, .side-comment.has-comments.active .single-post.post-header:before article {
-    margin-top: -120px;
-  }
-}
-@media only screen and (min-width: 48em) {
-  body.single-post article, .main-navigation ul ul.single-post article, button i.single-post article, .side-comment.has-comments.active .single-post.comments-wrapper article, .side-comment.has-comments.active .single-post.post-header:before article {
-    margin-top: -350px;
-  }
-}
-
-.entry-content {
-  margin-top: 25px;
-}
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-  .entry-content {
-    margin-top: 70px;
-  }
-}
-@media only screen and (min-width: 48em) {
-  .entry-content {
-    margin-top: 25px;
-  }
 }
