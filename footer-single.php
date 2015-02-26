@@ -19,19 +19,19 @@
 		</div><!-- .site-info -->
            </div>
 	</footer><!-- #colophon -->
-
-<!--div class="fixedBar">
+<div class="fixedBar">
 <div class="boxfloat">
-<div class="tips">
-<div class="left floatingFooter borderRight valign-wrapper"><a href="< ?php echo esc_url( home_url( '/' ) ); ?>" rel="home">< ?php bloginfo( 'name' ); ?></a></div>
-<div class="right floatingFooter borderLeft valign-wrapper">< ?php
+
+<div class="left floatingFooter borderRight valign-wrapper"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
+<div class="right floatingFooter borderLeft valign-wrapper"><?php
 				previous_post_link( '<div class="nav-previous">%link</div>', '%title' );
 			?></div>
+
 </div>
 </div>
-</div-->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+
 </body>
 </html>

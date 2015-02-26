@@ -33,6 +33,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php portland_entry_footer(); ?>
+		<?php portland_entry_meta(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

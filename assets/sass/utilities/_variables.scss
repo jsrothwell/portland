@@ -37,3 +37,19 @@ $ff-29: "all and (min--moz-device-pixel-ratio:0) and (min-resolution: 3e1dpcm)";
   $link-color: color("orange", "darken-1");
   $button-color: $link-color;
   $radius: 3px;
+
+//Measurement Variables
+$t-2px: 0.125em;
+$t-5px: 0.3125em;
+$t-10px: 0.625em;
+$t-15px: 0.9375em;
+$t-20px: 1.25em;
+$t-30px: 1.875em;
+$t-40px: 2.62em;
+$t-50px: 3.125em;
+$t-60px: $t-30px * 2;
+$t-70px: $t-30px + $t-40px;
+$t-64px: 4em;
+$t-78px: 4.8em;
+$t-80px: 5em;
+$t-90px: $t-40px + $t-50px;

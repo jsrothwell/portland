@@ -123,7 +123,7 @@ add_action( 'wp_enqueue_scripts', 'portland_scripts' );
 /**
  * Custom template tags for this theme.
  */
-require get_template_directory() . '/inc/template-tags.php';
+//require get_template_directory() . '/inc/template-tags.php';
 
 /**
  * Custom functions that act independently of the theme templates.
@@ -230,4 +230,110 @@ add_filter( 'wpcf7_form_class_attr', 'your_custom_form_class_attr' );
 function your_custom_form_class_attr( $class ) {
 	$class .= ' col s12';
 	return $class;
+}
+
+/**
+ * Prints HTML with meta information for current post: author and date
+ *
+ * @since portland 1.0
+ *
+ * @return void
+ */
+if ( ! function_exists( 'portland_posted_on' ) ) {
+	function portland_posted_on() {
+		$post_icon = '';
+		switch ( get_post_format() ) {
+			case 'aside':
+				$post_icon = 'mdi-editor-insert-drive-file';
+				break;
+			case 'audio':
+				$post_icon = 'mdi-av-volume-up';
+				break;
+			case 'chat':
+				$post_icon = 'mdi-communication-comment';
+				break;
+			case 'gallery':
+				$post_icon = 'mdi-image-camera';
+				break;
+			case 'image':
+				$post_icon = 'mdi-action-picture-in-picture';
+				break;
+			case 'link':
+				$post_icon = 'mdi-content-link';
+				break;
+			case 'quote':
+				$post_icon = 'mdi-editor-format-quote';
+				break;
+			case 'status':
+				$post_icon = 'mdi-action-account-box';
+				break;
+			case 'video':
+				$post_icon = 'mdi-av-videocam';
+				break;
+			default:
+				$post_icon = 'mdi-action-bookmark-outline';
+				break;
+		}
+
+		// Translators: 1: Icon 2: Permalink 3: Post date and time 4: Publish date in ISO format 5: Post date
+		$date = sprintf( '<p>Posted on: <a href="%2$s" title="Posted %3$s" rel="bookmark"><time class="entry-date" datetime="%4$s" itemprop="datePublished">%5$s</time></a>',
+			$post_icon,
+			esc_url( get_permalink() ),
+			sprintf( esc_html__( '%1$s @ %2$s', 'portland' ), esc_html( get_the_date('m,d,Y') ), esc_attr( get_the_time() ) ),
+			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date('m,F,Y') )
+		);
+
+		// Translators: 1: Date link 2: Author link 3: Categories 4: No. of Comments
+		$author = sprintf( '<address class="author vcard">Posted by: <a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></address><hr />',
+			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+			esc_attr( sprintf( esc_html__( 'View all posts by %s', 'portland' ), get_the_author() ) ),
+			get_the_author()
+		);
+
+		// Return the Categories as a list
+		$categories_list = get_the_category_list( esc_html__( ' ', 'portland' ) );
+
+		// Translators: 1: Permalink 2: Title 3: No. of Comments
+		$comments = sprintf( '<span class="comments-link"><a href="%1$s" title="%2$s"><i class="mdi-editor-insert-comment"></i> %3$s</a></span><br />',
+			esc_url( get_comments_link() ),
+			esc_attr( esc_html__( 'Comment on ' . the_title_attribute( 'echo=0' ) ) ),
+			( get_comments_number() > 0 ? sprintf( _n( '%1$s Comment', '%1$s Comments', get_comments_number(), 'portland' ), get_comments_number() ) : esc_html__( 'No Comments', 'portland' ) )
+		);
+
+		// Translators: 1: Date 2: Author 3: Categories 4: Comments
+		printf( wp_kses( __( '<div class="header-meta">%1$s%2$s<span class="post-categories">%3$s</span>%4$s</div>', 'portland' ), array( 
+			'div' => array ( 
+				'class' => array() ), 
+			'span' => array( 
+				'class' => array() ) ) ),
+			$date,
+			$author,
+            ( is_search() ? '' : $comments ),
+			$categories_list
+		);
+	}
+}
+
+
+/**
+ * Prints HTML with meta information for current post: categories, tags, permalink
+ *
+ * @since portland 1.0
+ *
+ * @return void
+ */
+if ( ! function_exists( 'portland_entry_meta' ) ) {
+	function portland_entry_meta() {
+		// Return the Tags as a list
+		$tag_list = "";
+		if ( get_the_tag_list() ) {
+			$tag_list = get_the_tag_list( '<span class="post-tags">', esc_html__( ' ', 'portland' ), '</span>' );
+		}
+
+		// Translators: 1 is tag
+		if ( $tag_list ) {
+			printf( wp_kses( __( '<i class="mdi-image-tag-faces"></i> %1$s', 'portland' ), array( 'i' => array( 'class' => array() ) ) ), $tag_list );
+		}
+	}
 }

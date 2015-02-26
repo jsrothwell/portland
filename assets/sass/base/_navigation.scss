@@ -5,17 +5,17 @@
 5.1 Links
 --------------------------------------------------------------*/
 a {
-	
+	color: royalblue;
 }
 
 a:visited {
-	
+	color: purple;
 }
 
 a:hover,
 a:focus,
 a:active {
-	
+	color: midnightblue;
 }
 
 a:focus {
@@ -103,7 +103,7 @@ a:active {
 	display: none;
 }
 
-@media #{$retina-phone} {
+@media screen and (max-width: 600px) {
 	.menu-toggle,
 	.main-navigation.toggled .nav-menu {
 		display: block;

@@ -1,19 +1,3 @@
-//Measurement Variables
-$t-2px: 0.125em;
-$t-5px: 0.3125em;
-$t-10px: 0.625em;
-$t-15px: 0.9375em;
-$t-20px: 1.25em;
-$t-30px: 1.875em;
-$t-40px: 2.62em;
-$t-50px: 3.125em;
-$t-60px: $t-30px * 2;
-$t-70px: $t-30px + $t-40px;
-$t-64px: 4em;
-$t-78px: 4.8em;
-$t-80px: 5em;
-$t-90px: $t-40px + $t-50px;
-
 /*--------------------------------------------------------------
 2.0 Typography
 --------------------------------------------------------------*/
@@ -22,6 +6,7 @@ button,
 input,
 select,
 textarea {
+	color: #404040;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -56,6 +41,7 @@ address {
 }
 
 pre {
+	background: #eee;
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 15px;
 	font-size: 0.9375rem;
@@ -83,6 +69,7 @@ acronym {
 
 mark,
 ins {
+	background: #fff9c0;
 	text-decoration: none;
 }
 
@@ -181,6 +168,11 @@ p#form-allowed-tags {
 font-size: 0.8rem;
 }
 
+.fixedBar {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
 
 .floatingFooter {
     font-weight:100;
@@ -200,8 +192,18 @@ h1.entry-title  {
 }
 
 .entry-meta {   
-    @media #{$retina-phone} {  font-size:$t-10px;line-height:110%; }
+    @media #{$retina-phone} {  font-size:$t-15px;line-height:$t-15px; }
     //@media #{$tablets} {  font-size:2.4rem; }*/
-    font-size: $t-30px;
+    font-size: $t-20px;
     line-height:$t-20px;
+    .header-meta    {
+        p   {   margin-bottom:auto;
+        }
+        hr  {
+            margin-bottom:1em;
+        }
+        address {
+            margin:0 0 1em;
+        }
+    }
 }

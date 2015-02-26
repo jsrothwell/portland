@@ -45,17 +45,28 @@ background: white;
     background-color: #5f6673;
 }
 body.single-post header.entry-header {   color:$primary-color-light;   }
-body.single .vcard a, body.single .posted-on a {   color:color('blue-grey', 'lighten-5');   }
-body.single .vcard a:visited, body.single .posted-on a:visited  {   color:color('blue-grey', 'lighten-4');  }
-.single-featured-image  {
-    h2 {
+body.single .vcard a, body.single .posted-on a {   color:color('grey', 'darken-2');   }
+body.single .vcard a:visited, body.single .posted-on a:visited  {   color:ccolor('grey', 'darken-4');  }
+.single-featured-image h2 {
 	color:white;
-        a {
-	color:$primary-color-light;
-        &:visited {
+}
+.single-featured-image h2 a {
 	color:$primary-color-light;
 }
-        &:hover {
+.single-featured-image h2 a:visited {
 	color:$primary-color-light;
+}
+.single-featured-image h2 a:hover {
+	color:$primary-color-light;
+}
+
+.entry-meta {
+    .header-meta    { color:color('grey', 'darken-3');
+        hr  {   background-color:color('grey', 'darken-2'); }
+        a   { color:color('grey', 'darken-2');
+            &:visited   {   color:color('grey', 'darken-4'); }
         }
-        }}}
+    }
+}
+
+.col.s6.single-post-title.post-meta.right   {   background-color:rgba($primary-color-dark, 0.5);border-bottom-right-radius:3px;border-top-right-radius:3px;  }

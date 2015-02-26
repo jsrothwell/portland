@@ -10091,6 +10091,7 @@ button,
 input,
 select,
 textarea {
+  color: #404040;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
@@ -10125,6 +10126,7 @@ address {
 }
 
 pre {
+  background: #eee;
   font-family: "Courier 10 Pitch", Courier, monospace;
   font-size: 15px;
   font-size: 0.9375rem;
@@ -10152,6 +10154,7 @@ acronym {
 
 mark,
 ins {
+  background: #fff9c0;
   text-decoration: none;
 }
 
@@ -10253,6 +10256,12 @@ p#form-allowed-tags {
   font-size: 0.8rem;
 }
 
+.fixedBar {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
 .floatingFooter {
   font-weight: 100;
 }
@@ -10277,14 +10286,23 @@ h1.entry-title {
 }
 
 .entry-meta {
-  font-size: 1.875em;
+  font-size: 1.25em;
   line-height: 1.25em;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .entry-meta {
-    font-size: 0.625em;
-    line-height: 110%;
+    font-size: 0.9375em;
+    line-height: 0.9375em;
   }
+}
+.entry-meta .header-meta p {
+  margin-bottom: auto;
+}
+.entry-meta .header-meta hr {
+  margin-bottom: 1em;
+}
+.entry-meta .header-meta address {
+  margin: 0 0 1em;
 }
 
 .ig-walden {
@@ -10382,54 +10400,135 @@ h1.entry-title {
   filter: sepia(0.15) saturate(1.5) contrast(0.9);
 }
 
-/*WPBeginner Footer Bar*/
 .fixedBar {
-  background: #000;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  z-index: 999;
+  -webkit-transition: height 0.3s;
+  transition: height 0.3s;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  .fixedBar {
+    display: none;
+  }
+}
+@media only screen and (min-width: 30em) {
+  .fixedBar {
+    display: none;
+  }
+}
+
+.fixedBar h1#logo {
+  display: inline-block;
+  height: 150px;
+  line-height: 150px;
+  float: left;
+  font-family: "Oswald", sans-serif;
+  font-size: 60px;
+  color: white;
+  font-weight: 400;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.fixedBar nav {
+  display: inline-block;
+  float: right;
+}
+
+.fixedBar nav a, .fixedBar nav div.site-branding a:visited, div.site-branding .fixedBar nav a:visited {
+  line-height: 150px;
+  margin-left: 20px;
+  color: #9fdbfc;
+  font-weight: 700;
+  font-size: 18px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.fixedBar nav a:hover {
+  color: white;
+}
+
+.fixedBar.smaller {
+  height: 0;
+  transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+}
+
+.fixedBar.smaller h1#logo {
+  width: 150px;
+  height: 75px;
+  line-height: 75px;
+  font-size: 30px;
+}
+
+.fixedBar.smaller nav a {
+  line-height: 75px;
+}
+
+@media all and (max-width: 660px) {
+  .fixedBar h1#logo {
+    display: block;
+    float: none;
+    margin: 0 auto;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+  }
+
+  .fixedBar nav {
+    display: block;
+    float: none;
+    height: 50px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .fixedBar nav a, .fixedBar nav div.site-branding a:visited, div.site-branding .fixedBar nav a:visited {
+    line-height: 50px;
+    margin: 0 10px;
+  }
+
+  .fixedBar.smaller {
+    height: 75px;
+  }
+
+  .fixedBar.smaller h1#logo {
+    height: 40px;
+    line-height: 40px;
+    font-size: 30px;
+  }
+
+  .fixedBar.smaller nav {
+    height: 35px;
+  }
+
+  .fixedBar.smaller nav a {
+    line-height: 35px;
+  }
+}
+.fixedBar {
   bottom: 0px;
-  color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
   left: 0;
   padding: 0px 0;
   position: fixed;
-  font-size: 16px;
   width: 100%;
   z-index: 99999;
   float: left;
-  vertical-align: middle;
   margin: 0px 0 0;
   opacity: 0.95;
-  font-weight: bold;
+  height: 60px;
 }
 
-.boxfloat {
-  text-align: center;
-  width: 920px;
-  margin: 0 auto;
-}
-
-#tips, #tips li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-#tips {
-  width: 920px;
-  font-size: 20px;
-  line-height: 120%;
-}
-
-#tips li {
-  padding: 15px 0;
-  display: none;
-}
-
-#tips li a {
-  color: #fff;
-}
-
-#tips li a:hover {
-  text-decoration: none;
+.fixedBar {
+  background: #fafafa;
+  color: #d4d4d4;
 }
 
 /*--------------------------------------------------------------
@@ -10529,6 +10628,22 @@ textarea {
 /*--------------------------------------------------------------
 5.1 Links
 --------------------------------------------------------------*/
+a, div.site-branding a, div.site-branding a:visited, ul li a {
+  color: royalblue;
+}
+
+a:visited, div.site-branding a:visited {
+  color: purple;
+}
+
+a:hover, div.site-branding a:hover,
+a:focus,
+div.site-branding a:focus,
+a:active,
+div.site-branding a:active {
+  color: midnightblue;
+}
+
 a:focus, div.site-branding a:focus {
   outline: thin dotted;
 }
@@ -10597,7 +10712,7 @@ div.site-branding a:active {
   display: none;
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+@media screen and (max-width: 600px) {
   .menu-toggle,
   .main-navigation.toggled .nav-menu {
     display: block;
@@ -10796,7 +10911,8 @@ header#masthead {
   z-index: 100000;
   height: 60px;
 }
-header#masthead:after {
+
+#masthead:after {
   content: ".";
   visibility: hidden;
   height: 0;
@@ -10867,6 +10983,7 @@ nav.main-navigation li {
 .main-navigation ul li:hover > ul {
   margin-top: 37px;
 }
+
 .main-navigation ul ul {
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -10892,6 +11009,13 @@ footer.site-footer {
 
 .form-submit {
   display: none;
+}
+
+.boxfloat {
+  text-align: center;
+  width: 90%;
+  margin: auto;
+  height: 100%;
 }
 
 .borderRight {
@@ -10940,7 +11064,8 @@ h1.entry-title {
 }
 
 body.single h1.entry-title, .main-navigation ul ul.single h1.entry-title, button i.single h1.entry-title, .side-comment.has-comments.active .single.comments-wrapper h1.entry-title {
-  margin-top: 0;
+  margin-top: 0.625em;
+  vertical-align: middle;
   text-align: right;
 }
 
@@ -10978,6 +11103,7 @@ div#content {
 body.single-post header.entry-header, .main-navigation ul ul.single-post header.entry-header, button i.single-post header.entry-header, .side-comment.has-comments.active .single-post.comments-wrapper header.entry-header {
   text-align: center;
   padding-bottom: 100px;
+  height: 15em;
 }
 
 .single-featured-image {
@@ -10986,6 +11112,7 @@ body.single-post header.entry-header, .main-navigation ul ul.single-post header.
   margin: auto;
   overflow: hidden;
 }
+
 .single-featured-image h2 {
   position: absolute;
   bottom: 0px;
@@ -11022,11 +11149,7 @@ body.single-post header.entry-header, .main-navigation ul ul.single-post header.
 }
 
 .col.s6.single-post-title.post-meta.right {
-  border-left: 2px solid #fafafa;
-}
-
-.col.s6.single-post-title.post-header {
-  border-right: 3px solid #d4d4d4;
+  border: 2px solid #fafafa;
 }
 
 .wp-post-image {
@@ -11273,22 +11396,44 @@ body.single-post header.entry-header, .main-navigation ul ul.single-post header.
 }
 
 body.single .vcard a, .main-navigation ul ul.single .vcard a, button i.single .vcard a, .side-comment.has-comments.active .single.comments-wrapper .vcard a, body.single .posted-on a, .main-navigation ul ul.single .posted-on a, button i.single .posted-on a, .side-comment.has-comments.active .single.comments-wrapper .posted-on a {
-  color: #eceff1;
+  color: #616161;
 }
 
 body.single .vcard a:visited, .main-navigation ul ul.single .vcard a:visited, button i.single .vcard a:visited, .side-comment.has-comments.active .single.comments-wrapper .vcard a:visited, body.single .posted-on a:visited, .main-navigation ul ul.single .posted-on a:visited, button i.single .posted-on a:visited, .side-comment.has-comments.active .single.comments-wrapper .posted-on a:visited {
-  color: #cfd8dc;
+  color: ccolor("grey", "darken-4");
 }
 
 .single-featured-image h2 {
   color: white;
 }
+
 .single-featured-image h2 a, .single-featured-image h2 div.site-branding a:visited, div.site-branding .single-featured-image h2 a:visited {
   color: white;
 }
+
 .single-featured-image h2 a:visited {
   color: white;
 }
+
 .single-featured-image h2 a:hover {
   color: white;
+}
+
+.entry-meta .header-meta {
+  color: #424242;
+}
+.entry-meta .header-meta hr {
+  background-color: #616161;
+}
+.entry-meta .header-meta a, .entry-meta .header-meta div.site-branding a:visited, div.site-branding .entry-meta .header-meta a:visited {
+  color: #616161;
+}
+.entry-meta .header-meta a:visited {
+  color: #212121;
+}
+
+.col.s6.single-post-title.post-meta.right {
+  background-color: rgba(212, 212, 212, 0.5);
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
 }
