@@ -44,7 +44,7 @@ background: white;
 .post-meta:before  {
     background-color: #5f6673;
 }
-body.single-post header.entry-header {   color:$primary-color-light;   }
+body.single-post header.entry-header {      }
 body.single .vcard a, body.single .posted-on a {   color:color('grey', 'darken-2');   }
 body.single .vcard a:visited, body.single .posted-on a:visited  {   color:ccolor('grey', 'darken-4');  }
 .single-featured-image h2 {
@@ -62,11 +62,12 @@ body.single .vcard a:visited, body.single .posted-on a:visited  {   color:ccolor
 
 .entry-meta {
     .header-meta    { color:color('grey', 'darken-3');
-        hr  {   background-color:color('grey', 'darken-2'); }
+        
         a   { color:color('grey', 'darken-2');
             &:visited   {   color:color('grey', 'darken-4'); }
         }
     }
 }
-
-.col.s6.single-post-title.post-meta.right   {   background-color:rgba($primary-color-dark, 0.5);border-bottom-right-radius:3px;border-top-right-radius:3px;  }
+h1.entry-title {       
+    border-bottom:1px solid $primary-color-dark;
+}

@@ -176,13 +176,14 @@ margin-left: 220px;
 body.single header  {   position:relative;
 }
 h1.entry-title  {
-    margin-top: 60px;
+    margin:20px 0 0 10px;
+    padding-bottom:10px;
 }
-body.single h1.entry-title  {   
+/*body.single h1.entry-title  {   
     margin-top:$t-10px;
     vertical-align:middle;
     text-align: right;
-}
+}*/
 .post-header:before   {  
     content: '';
     position: absolute;
@@ -204,7 +205,7 @@ body.single h1.entry-title  {
 .hundred-percent    {   width:100%; }
 form#searchform {   margin-top:3.0em;   }
 div#content {   padding:0;  }
-body.single-post header.entry-header {   text-align:center;padding-bottom:100px;height:15em;    }
+/*body.single-post header.entry-header {   text-align:center;padding-bottom:100px;height:15em;   }
 .featured-img   {    }
 
 .single-featured-image {
@@ -237,7 +238,7 @@ body.single-post header.entry-header {   text-align:center;padding-bottom:100px;
 }
 .entry-meta {   
     @media #{$retina-phone} {  margin-top:auto; }
-    //@media #{$tablets} {  font-size:2.4rem; }*/
+    //@media #{$tablets} {  font-size:2.4rem; }
     text-align:left;
     //margin-top: 0.7em;
 }
@@ -247,8 +248,8 @@ border: 2px solid $primary-color;
 }
 
 .col.s6.single-post-title.post-header {
-//border-right: 3px solid $primary-color-dark;
-}
+border-right: 3px solid $primary-color-dark;
+}*/
 
 .wp-post-image  {   
     border-top:5px solid $primary-color-dark;
@@ -256,13 +257,13 @@ border: 2px solid $primary-color;
 }
 
 .cutline-image  {
-    
+    color:orange;
 }
 
-body.single-post article {   margin-top:-400px;
+/*body.single-post article {   margin-top:-400px;
     @media #{$retina-phone} {  margin-top:-120px; }
     @media #{$tablets} {  margin-top:-350px; }
-}
+}*/
 
 .entry-content   { margin-top: 25px;
        @media #{$retina-phone} {  margin-top:70px; }
@@ -279,3 +280,26 @@ body.single-post .site-main {
     margin-top:auto;
 }
 .container  {   max-width:none !important;  }
+header  {   clear:both; }
+
+.vertical-image {
+	float:right;
+	margin-bottom: 1em;
+	margin-left: 2%;
+	max-width: 33%;
+}
+
+span.post-categories, .posted-on, .posted-by, .posted-comments  {
+    float:left;
+    margin:10px 15px;
+    font-size: $t-15px;
+}
+.posted-comments {
+margin-top: 7px;
+}
+
+iframe.twitter-tweet    {   margin:auto !important; }
+
+h1.site-title.col.s12 {
+margin-left: -30px;
+}

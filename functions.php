@@ -276,7 +276,7 @@ if ( ! function_exists( 'portland_posted_on' ) ) {
 		}
 
 		// Translators: 1: Icon 2: Permalink 3: Post date and time 4: Publish date in ISO format 5: Post date
-		$date = sprintf( '<p>Posted on: <a href="%2$s" title="Posted %3$s" rel="bookmark"><time class="entry-date" datetime="%4$s" itemprop="datePublished">%5$s</time></a>',
+		$date = sprintf( '<div class="posted-on">Posted on: <a href="%2$s" title="Posted %3$s" rel="bookmark"><time class="entry-date" datetime="%4$s" itemprop="datePublished">%5$s</time></a></div>',
 			$post_icon,
 			esc_url( get_permalink() ),
 			sprintf( esc_html__( '%1$s @ %2$s', 'portland' ), esc_html( get_the_date('m,d,Y') ), esc_attr( get_the_time() ) ),
@@ -285,7 +285,7 @@ if ( ! function_exists( 'portland_posted_on' ) ) {
 		);
 
 		// Translators: 1: Date link 2: Author link 3: Categories 4: No. of Comments
-		$author = sprintf( '<address class="author vcard">Posted by: <a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></address><hr />',
+		$author = sprintf( '<div class="posted-by"><address class="author vcard">Posted by: <a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></address></div>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			esc_attr( sprintf( esc_html__( 'View all posts by %s', 'portland' ), get_the_author() ) ),
 			get_the_author()
@@ -295,7 +295,7 @@ if ( ! function_exists( 'portland_posted_on' ) ) {
 		$categories_list = get_the_category_list( esc_html__( ' ', 'portland' ) );
 
 		// Translators: 1: Permalink 2: Title 3: No. of Comments
-		$comments = sprintf( '<span class="comments-link"><a href="%1$s" title="%2$s"><i class="mdi-editor-insert-comment"></i> %3$s</a></span><br />',
+		$comments = sprintf( '<div class="posted-comments"><span class="comments-link"><a href="%1$s" title="%2$s"><i class="mdi-editor-insert-comment"></i> %3$s</a></span></div>',
 			esc_url( get_comments_link() ),
 			esc_attr( esc_html__( 'Comment on ' . the_title_attribute( 'echo=0' ) ) ),
 			( get_comments_number() > 0 ? sprintf( _n( '%1$s Comment', '%1$s Comments', get_comments_number(), 'portland' ), get_comments_number() ) : esc_html__( 'No Comments', 'portland' ) )
@@ -307,10 +307,11 @@ if ( ! function_exists( 'portland_posted_on' ) ) {
 				'class' => array() ), 
 			'span' => array( 
 				'class' => array() ) ) ),
-			$date,
 			$author,
-            ( is_search() ? '' : $comments ),
-			$categories_list
+            $date,
+            $categories_list,
+            ( is_search() ? '' : $comments )
+			
 		);
 	}
 }
@@ -337,3 +338,9 @@ if ( ! function_exists( 'portland_entry_meta' ) ) {
 		}
 	}
 }
+
+// Remove the WP version for extra WordPress Security
+function remove_wp_version(){ 
+return ''; 
+} 
+add_filter('the_generator', 'remove_wp_version'); 

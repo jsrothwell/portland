@@ -22,7 +22,7 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'portland' ); ?></a>
 
 	<header id="masthead" class="site-header col s12" role="banner">
-		<div class="col s12 offset-s1">
+		<div class="col s10 offset-s1">
             <div class="site-branding col s10 m6">
 			<h1 class="site-title col s12"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<!--h2 class="site-description">< ?php bloginfo( 'description' ); ?></h2-->

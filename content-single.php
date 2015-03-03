@@ -7,11 +7,12 @@
     
 
 
-<header class="entry-header single-featured-image col s6 offset-s3">
-    <div class="col s6 single-post-title post-header">
+<header class="entry-header single-featured-image col s10 offset-s1">
+    <div class="col s12 single-post-title post-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-    </div>
-    <div class="col s6 right single-post-title post-meta">
+    </div><hr />
+    
+    <div class="col s12 right single-post-title post-meta">
 		<div class="entry-meta">
 			<?php portland_posted_on(); ?>
         </div><!-- .entry-meta --></div>

@@ -7,8 +7,7 @@ input,
 select,
 textarea {
 	color: #404040;
-	font-size: 16px;
-	font-size: 1rem;
+	font-size: $t-16px;
 	line-height: 1.5;
 }
 
@@ -43,8 +42,7 @@ address {
 pre {
 	background: #eee;
 	font-family: "Courier 10 Pitch", Courier, monospace;
-	font-size: 15px;
-	font-size: 0.9375rem;
+	font-size: $t-15px;
 	line-height: 1.6;
 	margin-bottom: 1.6em;
 	max-width: 100%;
@@ -57,8 +55,7 @@ kbd,
 tt,
 var {
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-	font-size: 15px;
-	font-size: 0.9375rem;
+	font-size: $t-15px;
 }
 
 abbr,
@@ -74,7 +71,7 @@ ins {
 }
 
 big {
-	font-size: 125%;
+	font-size: $t-12-5px;
 }
 
 /*--------------------------------------------------------------
@@ -152,10 +149,10 @@ table {
 
 div.site-branding   {   
     h1.site-title   {
-        font-size:130%;
+        font-size:$t-20px;
         line-height:150%;
         @media #{$retina-phone}  {
-            font-size:110%;
+            font-size:$t-11px;
             line-height:120%;
         }
         @media #{$phones} {
@@ -165,12 +162,12 @@ div.site-branding   {
 }
 
 p#form-allowed-tags {
-font-size: 0.8rem;
+font-size: $t-13px;
 }
 
 .fixedBar {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: $t-16px;
   font-weight: bold;
 }
 
@@ -178,22 +175,23 @@ font-size: 0.8rem;
     font-weight:100;
 }
 
-button i    {   font-size:2.0rem;   }
+button i    {   font-size:$t-32px;   }
 
 h1.entry-title  {
     font-size: $t-70px;
     line-height:$t-15px;
-    @media #{$retina-phone} {  font-size:120%;line-height:130%; }
-    //@media #{$tablets} {  font-size:2.4rem; }
+    margin: 20px 0px 40px;
+    @media #{$retina-phone} {  font-size:$t-12px;line-height:130%; }
+    //@media #{$tablets} {  font-size:$t-38px; }
 }
 
 .single-featured-image h2 {
-	font-size: 20px;
+	font-size: $t-20px;
 }
 
 .entry-meta {   
     @media #{$retina-phone} {  font-size:$t-15px;line-height:$t-15px; }
-    //@media #{$tablets} {  font-size:2.4rem; }*/
+    //@media #{$tablets} {  font-size:$t-38px; }*/
     font-size: $t-20px;
     line-height:$t-20px;
     .header-meta    {
@@ -206,4 +204,8 @@ h1.entry-title  {
             margin:0 0 1em;
         }
     }
+}
+
+address.author.vcard {
+margin: 0 0 0.2em;
 }

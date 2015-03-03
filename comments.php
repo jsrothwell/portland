@@ -18,7 +18,7 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area col s10 offset-s1">
+<div id="comments" class="comments-area">
 
 	<?php // You can start editing here -- including this comment! ?>
 
