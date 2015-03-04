@@ -194,6 +194,7 @@ h1.entry-title  {
     //@media #{$tablets} {  font-size:$t-38px; }*/
     font-size: $t-20px;
     line-height:$t-20px;
+    margin-top: $t-5px;
     .header-meta    {
         p   {   margin-bottom:auto;
         }
@@ -209,3 +210,4 @@ h1.entry-title  {
 address.author.vcard {
 margin: 0 0 0.2em;
 }
+header.entry-header h1.entry-title  {   font-size:$t-30px;padding:0;margin:0;  }

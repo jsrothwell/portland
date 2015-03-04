@@ -10092,7 +10092,7 @@ input,
 select,
 textarea {
   color: #404040;
-  font-size: 1em;
+  font-size: 1rem;
   line-height: 1.5;
 }
 
@@ -10127,7 +10127,7 @@ address {
 pre {
   background: #eee;
   font-family: "Courier 10 Pitch", Courier, monospace;
-  font-size: 0.9375em;
+  font-size: 0.9375rem;
   line-height: 1.6;
   margin-bottom: 1.6em;
   max-width: 100%;
@@ -10140,7 +10140,7 @@ kbd,
 tt,
 var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-  font-size: 0.9375em;
+  font-size: 0.9375rem;
 }
 
 abbr,
@@ -10156,7 +10156,7 @@ ins {
 }
 
 big {
-  font-size: 0.781em;
+  font-size: 0.781rem;
 }
 
 /*--------------------------------------------------------------
@@ -10239,23 +10239,23 @@ table {
 }
 
 div.site-branding h1.site-title {
-  font-size: 1.25em;
+  font-size: 1.25rem;
   line-height: 150%;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   div.site-branding h1.site-title {
-    font-size: 0.688em;
+    font-size: 0.688rem;
     line-height: 120%;
   }
 }
 
 p#form-allowed-tags {
-  font-size: 0.813em;
+  font-size: 0.813rem;
 }
 
 .fixedBar {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: bold;
 }
 
@@ -10264,33 +10264,34 @@ p#form-allowed-tags {
 }
 
 button i {
-  font-size: 2em;
+  font-size: 2rem;
 }
 
 h1.entry-title {
-  font-size: 4.495em;
-  line-height: 0.9375em;
+  font-size: 4.495rem;
+  line-height: 0.9375rem;
   margin: 20px 0px 40px;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   h1.entry-title {
-    font-size: 0.75em;
+    font-size: 0.75rem;
     line-height: 130%;
   }
 }
 
 .single-featured-image h2 {
-  font-size: 1.25em;
+  font-size: 1.25rem;
 }
 
 .entry-meta {
-  font-size: 1.25em;
-  line-height: 1.25em;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  margin-top: 0.3125rem;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .entry-meta {
-    font-size: 0.9375em;
-    line-height: 0.9375em;
+    font-size: 0.9375rem;
+    line-height: 0.9375rem;
   }
 }
 .entry-meta .header-meta p {
@@ -10305,6 +10306,12 @@ h1.entry-title {
 
 address.author.vcard {
   margin: 0 0 0.2em;
+}
+
+header.entry-header h1.entry-title {
+  font-size: 1.875rem;
+  padding: 0;
+  margin: 0;
 }
 
 .ig-walden {
@@ -11066,11 +11073,6 @@ h1.entry-title {
   padding-bottom: 10px;
 }
 
-/*body.single h1.entry-title  {   
-    margin-top:$t-10px;
-    vertical-align:middle;
-    text-align: right;
-}*/
 .post-header:before {
   content: '';
   position: absolute;
@@ -11102,51 +11104,6 @@ div#content {
   padding: 0;
 }
 
-/*body.single-post header.entry-header {   text-align:center;padding-bottom:100px;height:15em;   }
-.featured-img   {    }
-
-.single-featured-image {
-	position:relative;
-	width: 600px;
-    margin:  auto;
-	overflow:hidden;
-    
-}
-.single-featured-image h2 {
-	position:absolute;
-	bottom:0px;
-	left:0px;
-	padding-left:10px;
-	padding: 10px;
-	-moz-opacity:.80;
-	filter:alpha(opacity=20);
-	opacity:.80;
-	display: block;
-}
-
-
-.single-post-title  {
-    padding:20px;
-    height:15em;
-    @media only screen and (min-device-width : 320px) and (max-device-width : 568px) { height:5em;   }
-}
-.single-post-title.right    {
-    border-left:5px solid rbga($primary-color-light, 0.3);
-}
-.entry-meta {   
-    @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {  margin-top:auto; }
-    //@media only screen and (min-width : 48em) {  font-size:2.4rem; }
-    text-align:left;
-    //margin-top: 0.7em;
-}
-
-.col.s6.single-post-title.post-meta.right {
-border: 2px solid $primary-color;
-}
-
-.col.s6.single-post-title.post-header {
-border-right: 3px solid $primary-color-dark;
-}*/
 .wp-post-image {
   border-top: 5px solid #d4d4d4;
   border-bottom: 5px solid #d4d4d4;
@@ -11156,21 +11113,17 @@ border-right: 3px solid $primary-color-dark;
   color: orange;
 }
 
-/*body.single-post article {   margin-top:-400px;
-    @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {  margin-top:-120px; }
-    @media only screen and (min-width : 48em) {  margin-top:-350px; }
-}*/
 .entry-content {
-  margin-top: 25px;
+  padding-top: 25px;
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   .entry-content {
-    margin-top: 70px;
+    padding-top: 70px;
   }
 }
 @media only screen and (min-width: 48em) {
   .entry-content {
-    margin-top: 25px;
+    padding-top: 25px;
   }
 }
 
@@ -11204,7 +11157,11 @@ header {
 span.post-categories, .posted-on, .posted-by, .posted-comments {
   float: left;
   margin: 10px 15px;
-  font-size: 0.9375em;
+  font-size: 0.9375rem;
+}
+
+.posted-by {
+  margin-left: 0;
 }
 
 .posted-comments {
@@ -11217,6 +11174,10 @@ iframe.twitter-tweet {
 
 h1.site-title.col.s12 {
   margin-left: -30px;
+}
+
+body.author article, .main-navigation ul ul.author article, button i.author article, .side-comment.has-comments.active .author.comments-wrapper article {
+  margin-top: 40px;
 }
 
 /*--------------------------------------------------------------
@@ -11443,6 +11404,15 @@ body.single .vcard a:visited, .main-navigation ul ul.single .vcard a:visited, bu
   color: #212121;
 }
 
-h1.entry-title {
+div.post-header {
   border-bottom: 1px solid #d4d4d4;
+  padding-bottom: 1.25rem !important;
+}
+
+header.archive-header {
+  border-bottom: 1px solid #d4d4d4;
+  line-height: 1.813rem;
+  font-size: 0.813rem;
+  height: 3.75rem;
+  margin-top: 1.875rem;
 }

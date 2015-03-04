@@ -68,6 +68,15 @@ body.single .vcard a:visited, body.single .posted-on a:visited  {   color:ccolor
         }
     }
 }
-h1.entry-title {       
+div.post-header {       
     border-bottom:1px solid $primary-color-dark;
+    padding-bottom:$t-20px !important;
+}
+
+header.archive-header {       
+    border-bottom:1px solid $primary-color-dark;
+    line-height: $t-29px;
+    font-size: $t-13px;
+    height: $t-60px;
+    margin-top: $t-30x`z`xpx;
 }
