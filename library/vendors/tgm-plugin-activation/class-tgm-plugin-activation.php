@@ -632,7 +632,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
                     $install_link = true; // We need to display the 'install' action link.
                     $install_link_count++; // Increment the install link count.
                     if ( current_user_can( 'install_plugins' ) ) {
-                        if ( isset( $plugin['required'] ) && $plugin['required'] ) {
+                        if ( $plugin['required'] ) {
                             $message['notice_can_install_required'][] = $plugin['name'];
                         }
                         // This plugin is only recommended.
@@ -1057,7 +1057,7 @@ if ( ! function_exists( 'tgmpa' ) ) {
  * @since 2.2.0
  */
 if ( ! class_exists( 'WP_List_Table' ) ) {
-    require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' );
+    get_template_part( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' );
 }
 
 if ( ! class_exists( 'TGMPA_List_Table' ) ) {
