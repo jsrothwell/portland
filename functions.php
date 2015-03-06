@@ -108,7 +108,7 @@ function portland_scripts() {
     wp_enqueue_script( 'portland-scripts' , get_template_directory_uri() . '/assets/js/production.js' );
     wp_enqueue_script( 'portland-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
     wp_enqueue_script( 'portland-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-    wp_enqueue_script(  'materialize-js', get_template_directory_uri() . '/assets/bower_components/materialize/dist/js/materialize.min.js', array(), 'v0.95.2', true );
+    wp_enqueue_script(  'materialize-js', get_template_directory_uri() . '/assets/bower_components/materialize/dist/js/materialize.js', array(), 'v0.95.2', true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -344,3 +344,69 @@ function remove_wp_version(){
 return ''; 
 } 
 add_filter('the_generator', 'remove_wp_version'); 
+
+// WP Typeahead. Add autocomplete search functionality to default WordPress search form. Originally created by c.bavota & Michal Bluma
+
+
+class portland_WP_Typeahead {
+	public $plugin_url;
+
+	public function __construct() {
+		$this->plugin_url = plugin_dir_url( __FILE__ );
+
+		add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_scripts' ) );
+
+		add_action( 'wp_ajax_nopriv_ajax_search', array( $this, 'ajax_search' ) );
+		add_action( 'wp_ajax_ajax_search', array( $this, 'ajax_search' ) );
+	}
+
+	/**
+	 * Enqueue Typeahead.js and the stylesheet
+	 *
+	 * @since 1.0.0
+	 */
+	public function wp_enqueue_scripts() {
+		wp_enqueue_script( 'wp_typeahead_js', get_template_directory_uri() . '/js/typeahead.min.js', array( 'jquery' ), '', true );
+		wp_enqueue_script( 'wp_hogan_js' , get_template_directory_uri() . '/js/hogan.min.js', array( 'wp_typeahead_js' ), '', true );
+		wp_enqueue_script( 'typeahead_wp_plugin' , get_template_directory_uri() . '/js/wp-typeahead.js', array( 'wp_typeahead_js', 'wp_hogan_js' ), '', true );
+
+		$wp_typeahead_vars = array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) );
+		wp_localize_script( 'typeahead_wp_plugin', 'wp_typeahead', $wp_typeahead_vars );
+
+		//wp_enqueue_style( 'wp_typeahead_css', get_template_directory_uri() . '/css/typeahead.css' );
+	}
+
+	/**
+	 * Ajax query for the search
+	 *
+	 * @since 1.0.0
+	 */
+	public function ajax_search() {
+		if ( isset( $_REQUEST['fn'] ) && 'get_ajax_search' == $_REQUEST['fn'] ) {
+			$search_query = new WP_Query( array(
+				's' => $_REQUEST['terms'],
+				'posts_per_page' => 10,
+				'no_found_rows' => true,
+			) );
+
+			$results = array( );
+			if ( $search_query->get_posts() ) {
+				foreach ( $search_query->get_posts() as $the_post ) {
+					$title = get_the_title( $the_post->ID );
+					$results[] = array(
+						'value' => $title,
+						'url' => get_permalink( $the_post->ID ),
+						'tokens' => explode( ' ', $title ),
+					);
+				}
+			} else {
+				$results[] = __( 'Sorry. No results match your search.', 'wp-typeahead' );
+			}
+
+			wp_reset_postdata();
+			echo json_encode( $results );
+		}
+		die();
+	}
+}
+$portland_wp_typeahead = new portland_WP_Typeahead;
