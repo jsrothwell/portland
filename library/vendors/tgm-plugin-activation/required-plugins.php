@@ -94,11 +94,11 @@ function my_theme_register_required_plugins() {
             'slug'      => 'wordpress-seo',
             'required'  => false,
         ),
-        array(
+        /*array(
             'name'      => 'WP Typeahead',
             'slug'      => 'wp-typeahead',
             'required'  => false,
-        ),
+        ),*/
 
 
     );

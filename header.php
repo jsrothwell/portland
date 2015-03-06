@@ -1,6 +1,7 @@
 <?php
 /**
  * The header for our theme.
+ 
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
@@ -23,13 +24,13 @@
 
 	<header id="masthead" class="site-header col s12" role="banner">
 		<div class="col s10 offset-s1">
-            <div class="site-branding col s10 m6">
+            <div class="site-branding col s10 m3">
 			<h1 class="site-title col s12"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<!--h2 class="site-description">< ?php bloginfo( 'description' ); ?></h2-->
             
 		</div><!-- .site-branding -->
-           <div class="col s2 m6"> 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
+           <div class="col s2 m9"> 
+		<nav id="site-navigation" class="main-navigation right" role="navigation">
 			<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( '<i class="mdi-navigation-menu"></i>', 'portland' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'header-menu-dropdown', 'container_class' => 'header-menu-container right' ) ); ?>
             </div>

@@ -10055,7 +10055,7 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 fieldset {
-  border: 1px solid #c0c0c0;
+  border: 0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
@@ -11132,7 +11132,7 @@ div#content {
 }
 
 body.blog .site-main, .main-navigation ul ul.blog .site-main, button i.blog .site-main, .side-comment.has-comments.active .blog.comments-wrapper .site-main {
-  margin-top: 60px;
+  margin-top: 80px;
 }
 
 body.single-post .site-main, .main-navigation ul ul.single-post .site-main, button i.single-post .site-main, .side-comment.has-comments.active .single-post.comments-wrapper .site-main {
@@ -11415,4 +11415,86 @@ header.archive-header {
   font-size: 0.813rem;
   height: 3.75rem;
   margin-top: 1.875rem;
+}
+
+#searchform input[type="submit"] {
+  width: 25%;
+}
+
+.twitter-typeahead {
+  width: 73% !important;
+}
+
+.twitter-typeahead * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.tt-query,
+.tt-hint {
+  padding: 6px;
+  outline: none;
+  width: 100% !important;
+  vertical-align: inherit !important;
+}
+
+.tt-hint {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #999;
+}
+
+.tt-dropdown-menu {
+  width: 100%;
+  margin-top: 12px;
+  padding: 8px 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  text-shadow: none;
+}
+
+.tt-dropdown-menu p {
+  margin: 5px 0 !important;
+  line-height: 1.4 !important;
+}
+
+.tt-dropdown-menu a, .tt-dropdown-menu div.site-branding a, div.site-branding .tt-dropdown-menu a {
+  color: #444 !important;
+  border: 0 !important;
+  display: block;
+  text-decoration: none !important;
+}
+
+.tt-suggestion {
+  padding: 3px 10px;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.tt-suggestion.tt-is-under-cursor {
+  color: #fff;
+  background-color: #0097cf;
+}
+
+.tt-suggestion.tt-is-under-cursor a, .tt-suggestion.tt-is-under-cursor div.site-branding a:visited, div.site-branding .tt-suggestion.tt-is-under-cursor a:visited {
+  color: #fff !important;
+}
+
+.tt-suggestion p {
+  margin: 0;
+}
+
+/* rtl support */
+.twitter-typeahead.tt-rtl {
+  direction: rtl;
+}
+
+.twitter-typeahead.tt-rtl .tt-dropdown-menu {
+  left: auto;
+  right: 0;
 }
