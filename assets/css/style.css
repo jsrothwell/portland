@@ -10309,7 +10309,8 @@ address.author.vcard {
 }
 
 header.entry-header h1.entry-title {
-  font-size: 1.875rem;
+  font-size: 3.75rem;
+  line-height: 3.125rem;
   padding: 0;
   margin: 0;
 }
@@ -11178,6 +11179,14 @@ h1.site-title.col.s12 {
 
 body.author article, .main-navigation ul ul.author article, button i.author article, .side-comment.has-comments.active .author.comments-wrapper article {
   margin-top: 40px;
+}
+
+span.tt-dropdown-menu {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  border: none !important;
+  padding: 0;
+  background-color: #fafafa;
 }
 
 /*--------------------------------------------------------------

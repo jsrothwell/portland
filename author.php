@@ -48,7 +48,7 @@ get_header(); ?>
 			<?php endif; // end have_posts() check ?>
 
 		</div> <!-- /.col.grid_8_of_12 -->
-		<?php get_sidebar(); ?>
+		
 
 	</div> <!-- /#primary.site-content.row -->
 

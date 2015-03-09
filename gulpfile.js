@@ -8,7 +8,8 @@
 var project     = 'portland', // Optional - Use your own project name here...
 	build       = './build/', // Files that you want to package into a zip go here
 	source      = './assets/', 	// Your main project assets and naming 'source' instead of 'src' to avoid confusion with gulp.src
-	bower       = './bower_components/'; // Not truly using this yet, more or less playing right now. TO-DO Place in Dev branch
+	bower       = './bower_components/', // Not truly using this yet, more or less playing right now. TO-DO Place in Dev branch
+    base        = './'; //base level of theme
 
 // Load plugins
 var gulp 	= require('gulp'),
@@ -22,6 +23,7 @@ var gulp 	= require('gulp'),
 	newer 				= require('gulp-newer'),
 	rename 				= require('gulp-rename'),
 	concat 				= require('gulp-concat'),
+    filesize            = require('gulp-filesize'),
 	notify 				= require('gulp-notify'),
 	cmq 					= require('gulp-combine-media-queries'),
 	runSequence 	= require('gulp-run-sequence'),
@@ -56,6 +58,22 @@ gulp.task('browser-sync', function() {
 });
 
 /**
+changed
+**
+
+var changed = require('gulp-changed');
+
+gulp.task('css', function () {  
+  return gulp.src('less/**.less')
+    .pipe(changed('build/css'))
+    .pipe(less({
+      paths: [ path.join(__dirname, 'less', 'includes') ]
+    }))
+    .pipe(gulp.dest('build/css'))
+    .on('error', gutil.log);
+});
+
+/**
  * Styles
  *
  * Looking at src/sass and compiling the files into Expanded format, Autoprefixing and sending the files to the build folder
@@ -72,7 +90,7 @@ gulp.task('styles', function () {
 		.pipe(rename({ suffix: '-min' }))
 		.pipe(minifycss({keepBreaks:true}))
 		.pipe(minifycss({ keepSpecialComments: 0 }))
-		.pipe(gulp.dest(source+'css'))
+		.pipe(gulp.dest(base+'css'))
 		.pipe(reload({stream:true})) // Inject Styles when min style file is created
 		.pipe(notify({ message: 'Styles task complete', onLast: true }))
 });
@@ -88,15 +106,17 @@ gulp.task('js', function() {
 		// .pipe(jshint('.jshintrc')) // TO-DO: Reporting seems to be broken for js errors.
 		// .pipe(jshint.reporter('default'))
 		.pipe(concat('production.js'))
-		.pipe(gulp.dest(source+'js'))
+		.pipe(gulp.dest(base+'js'))
+        .pipe(filesize())
 		.pipe(rename({ suffix: '-min' }))
 		.pipe(uglify())
-		.pipe(gulp.dest(build+'assets/js/'))
+		.pipe(gulp.dest(base+'js'))
+        .pipe(filesize())
 		.pipe(notify({ message: 'Scripts task complete', onLast: true }));
 });
 
 /**
- * Images
+ * Imagesx`
  *
  * Look at src/images, optimize the images and send them to the appropriate place
 */
@@ -153,10 +173,17 @@ gulp.task('buildPhp', function() {
 });
 
 // Copy Library to Build
-gulp.task('buildAssets', function() {
-	return gulp.src([source+'**', source+'js/production.js'])
-		.pipe(gulp.dest(build+'/assets'))
-		.pipe(notify({ message: 'Copy of Assets directory complete', onLast: true }));
+gulp.task('buildScripts', function() {
+	return gulp.src([base+'js/*.js'])
+		.pipe(gulp.dest(build+'/js'))
+		.pipe(notify({ message: 'Copy of Scripts directory complete', onLast: true }));
+});
+
+// Copy Library to Build
+gulp.task('buildStyles', function() {
+	return gulp.src([base+'css/*.css'])
+		.pipe(gulp.dest(build+'/css'))
+		.pipe(notify({ message: 'Copy of Styles directory complete', onLast: true }));
 });
 
 // Copy Library to Build
@@ -186,7 +213,7 @@ gulp.task('buildZip', function () {
 gulp.task('buildImages', function() {
 	return gulp.src([source+'img/**/*', '!assets/images/originals/**'])
 		// .pipe(plugins.cache(plugins.imagemin({ optimizationLevel: 7, progressive: true, interlaced: true })))
-		.pipe(gulp.dest(build+'assets/img/'))
+		.pipe(gulp.dest(build+'img/'))
 		.pipe(plugins.notify({ message: 'Images task complete', onLast: true }));
 });
 
@@ -200,7 +227,7 @@ gulp.task('buildImages', function() {
 
 // Package Distributable Theme
 gulp.task('build', function(cb) {
-		runSequence('cleanup', 'styles', 'js', 'buildPhp', 'buildLibrary', 'buildAssets', 'buildImages', 'buildZip','cleanupFinal', cb);
+		runSequence('cleanup', 'styles', 'js', 'buildPhp', 'buildLibrary', 'buildScripts', 'buildStyles', 'buildImages', 'buildZip','cleanupFinal', cb);
 });
 
 

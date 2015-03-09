@@ -74,6 +74,18 @@ function portland_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+    
+    		// Enable support for Theme Options.
+		// Rather than reinvent the wheel, we're using the Options Framework by Devin Price, so huge props to him!
+		// http://wptheming.com/options-framework-theme/
+		if ( !function_exists( 'optionsframework_init' ) ) {
+			define( 'OPTIONS_FRAMEWORK_DIRECTORY', trailingslashit( get_template_directory_uri() ) . 'inc/' );
+			require_once trailingslashit( dirname( __FILE__ ) ) . 'inc/options-framework.php';
+
+			// Loads options.php from child or parent theme
+			$optionsfile = locate_template( 'options.php' );
+			load_template( $optionsfile );
+		}
 
 }
 endif; // portland_setup
@@ -103,7 +115,7 @@ add_action( 'widgets_init', 'portland_widgets_init' );
 function portland_scripts() {
 	wp_enqueue_style( 'portland-style', get_stylesheet_uri() );
 // Main Style
-    wp_enqueue_style( 'northwest-style',  get_stylesheet_directory_uri() . '/assets/css/style-min.css' );
+    wp_enqueue_style( 'northwest-style',  get_stylesheet_directory_uri() . '/css/style-min.css' );
 // Main Scripts	    
     wp_enqueue_script( 'portland-scripts' , get_template_directory_uri() . '/assets/js/production.js' );
     wp_enqueue_script( 'portland-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
@@ -410,3 +422,68 @@ class portland_WP_Typeahead {
 	}
 }
 $portland_wp_typeahead = new portland_WP_Typeahead;
+
+/**
+ * Return a string containing the footer credits & link
+ *
+ * @since portland 1.0
+ *
+ * @return string Footer credits & link
+ */
+if ( ! function_exists( 'portland_get_credits' ) ) {
+	function portland_get_credits() {
+		$output = '';
+		$output = sprintf( '%1$s <a href="%2$s" title="%3$s">%4$s</a>',
+			esc_html__( 'Proudly powered by', 'portland' ),
+			esc_url( esc_html__( 'http://wordpress.org/', 'portland' ) ),
+			esc_attr( esc_html__( 'Semantic Personal Publishing Platform', 'portland' ) ),
+			esc_html__( 'WordPress', 'portland' )
+		);
+
+		return $output;
+	}
+}
+
+function wpb_widgets_init() {
+
+	register_sidebar( array(
+		'name' => __( 'Main Footer', 'wpb' ),
+		'id' => 'sidebar-1',
+		'description' => __( 'The main sidebar appears on the right on each page except the front page template', 'wpb' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+    register_sidebar( array(
+		'name' => __( 'Main Footer 2', 'wpb' ),
+		'id' => 'sidebar-3',
+		'description' => __( 'The main sidebar appears on the right on each page except the front page template', 'wpb' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+        register_sidebar( array(
+		'name' => __( 'Main Footer 3', 'wpb' ),
+		'id' => 'sidebar-4',
+		'description' => __( 'The main sidebar appears on the right on each page except the front page template', 'wpb' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+
+    
+	register_sidebar( array(
+		'name' =>__( 'Front page footer', 'wpb'),
+		'id' => 'sidebar-2',
+		'description' => __( 'Appears on the static front page template', 'wpb' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	}
+
+add_action( 'widgets_init', 'wpb_widgets_init' );

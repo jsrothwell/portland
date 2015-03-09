@@ -10,14 +10,22 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer container" role="contentinfo">
+	<footer id="colophon" class="site-footer col s12 offset-s1" role="contentinfo">
         
         
-        <div class="row">
-		<div class="site-info col s12">
-			
-		</div><!-- .site-info -->
-           </div>
+		
+            <div id="secondary" class="widget-area col s4" role="complementary">
+	<?php dynamic_sidebar( 'sidebar-4' ); ?>
+	</div>	
+		    <div id="secondary" class="widget-area col s4" role="complementary">
+	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	</div>	
+	<div id="secondary" class="widget-area col s4" role="complementary">
+	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	</div>
+
+
+		
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
