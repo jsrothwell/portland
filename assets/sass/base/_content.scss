@@ -168,6 +168,7 @@ h1.entry-title  {
     bottom: 0;
     z-index: -1;
     left: 0;
+    
 }
 
 .post-meta:before  {
@@ -232,3 +233,4 @@ h1.site-title.col.s12 {
 margin-left: -30px;
 }
 body.author article {   margin-top:40px;    }
+span.tt-dropdown-menu   {   box-shadow:none !important;border:none !important;padding:0;background-color:$primary-color;    }
